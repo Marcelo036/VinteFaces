@@ -4,131 +4,188 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vinte Faces</title>
+    <title>Início | Vinte Faces</title>
     <link rel="shortcut icon" href="assets/Icon.png" type="image/x-icon">
     <link rel="stylesheet" href="Style/style.css">
 </head>
 
 <body>
-    <header class="grafite-900">
-        <img class="LogoTipo" src="assets/LogoTipo.png" alt="LogoTipo_VinteFaces">
-        <div class="navegacao">
-            <button class="btn-ativo">Inicio</button>
-            <button class="h-btn">Salas</button>
-            <button class="h-btn">Como funciona</button>
-            <button class="h-btn">Recursos</button>
-            <button class="h-btn">Lives</button>
-            <button class="h-btn">Sobre</button>
-            <button class="h-btn">Contato</button>
-        </div>
-        <div>
-            <button class="grafite-800 h2-btn pergaminho-100">ENTRAR</button>
-            <button class="h2-btn ouro-500">CRIAR SALA</button>
+    <header>
+        <a href="index.html"><img class="LogoTipo" src="assets/LogoTipo.png" alt="Vinte Faces"></a>
+        <nav class="navegacao" aria-label="Navegação principal">
+            <a class="btn-ativo" href="index.html">Inicio</a>
+            <a class="h-btn" href="salas.html">Salas</a>
+            <a class="h-btn" href="como-funciona.html">Como funciona</a>
+            <a class="h-btn" href="recursos.html">Recursos</a>
+            <a class="h-btn" href="lives.html">Lives</a>
+            <a class="h-btn" href="sobre.html">Sobre</a>
+            <a class="h-btn" href="contato.html">Contato</a>
+        </nav>
+        <div class="acoes-header">
+            <a class="h2-btn grafite-800 pergaminho-100" href="login.html">ENTRAR</a>
+            <a class="h2-btn ouro-500" href="salas.html">CRIAR SALA</a>
         </div>
     </header>
 
     <main>
-        <section class="Inicio">
+
+        <section class="sessao">
             <div>
-                <h1 class="pergaminho-100">SUA AVENTURA COMEÇA AQUI.</h1>
+                <p class="eyebrow">SUA MESA, SEU MUNDO, SUA HISTÓRIA</p>
+                <h1>SUA AVENTURA COMEÇA AQUI.</h1>
                 <p>Reúna seus amigos, crie seu mundo e viva histórias inesquecíveis. Tudo que você precisa para jogar
                     RPG de mesa em um só lugar.</p>
-                <button class="m-btn ouro-500" style="border: 1px grey solid;">EXPLORAR SALAS</button>
-                <button class="ouro-500-border m-btn pergaminho-100">CRIAR SALA</button>
+                <div class="botoes">
+                    <a class="m-btn ouro-500" href="salas.html">EXPLORAR SALAS</a>
+                    <a class="m-btn ouro-500-border" href="salas.html">CRIAR SALA</a>
+                </div>
             </div>
-            <img class="imgsec1" src="assets/dados.jpg" alt="Imagem de dados.">
+            <img class="imgsec1" src="assets/dados.jpg" alt="Dados de RPG sobre uma mesa">
         </section>
 
         <section class="salas-d">
-            <h2 class="pergaminho-100">SALAS EM DESTAQUE</h2>
-            <div class="salas row">
-                <div class="card coluna grafite-600">
-                    <img src="assets/card1.png" alt="" style="border-radius: 20px 20px 0 0;">
-                    <div class="card-conteudo">
-                        <button disabled class="btn-off ouro-500-border"
-                            alt="esta sala está aberta para qualquer um entrar">PÚBLICA</button><br>
-                        <br>
-                        <p class="pergaminho-100">CRIPTA DO REI CINZA</p><br>
-                        <p>Mestre: Fernanda</p><br>
-                        <p>Sistema: 5e</p><br>
-                        <div class="row">
-                            <div class="info">
-                                <img class="icon" src="assets/group-icon.png" alt="icon">
-                                <p>4/6 jogadores</p>
-                            </div>
-                            <button class="ouro-500-border ouro-500p btn-card">ENTRAR</button>
-                        </div>
-                    </div>
+            <div class="container">
+                <div class="section-title">
+                    <p class="eyebrow">ENCONTRE SUA PRÓXIMA CAMPANHA</p>
+                    <h2>SALAS EM DESTAQUE</h2>
                 </div>
-                <div class="card coluna grafite-600">
-                    <img src="assets/card1.png" alt="" style="border-radius: 20px 20px 0 0;">
-                    <div class="card-conteudo">
-                        <button disabled class="btn-off ouro-500-border"
-                            alt="esta sala está aberta para qualquer um entrar">PÚBLICA</button><br>
-                        <br>
-                        <p class="pergaminho-100">CRIPTA DO REI CINZA</p><br>
-                        <p>Mestre: Fernanda</p><br>
-                        <p>Sistema: 5e</p><br>
-                        <div class="row">
-                            <div class="info">
-                                <img class="icon" src="assets/group-icon.png" alt="icon">
-                                <p>4/6 jogadores</p>
+                <div class="salas">
+                    <article class="card">
+                        <img src="assets/card1.png" alt="Cenário de fantasia para uma campanha de RPG">
+                        <div class="card-conteudo">
+                            <span class="btn-off">PÚBLICA</span>
+                            <h3 style="margin-top:15px">CRIPTA DO REI CINZA</h3>
+                            <p>Mestre: Fernanda</p>
+                            <p>Sistema: 5e</p>
+                            <div class="card-rodape">
+                                <div class="info"><img src="assets/group-icon.png" alt=""><span>4/6 jogadores</span>
+                                </div>
+                                <a class="btn-card" href="salas.html">ENTRAR</a>
                             </div>
-                            <button class="ouro-500-border ouro-500p btn-card">ENTRAR</button>
                         </div>
-                    </div>
-                </div>
-                <div class="card coluna grafite-600">
-                    <img src="assets/card1.png" alt="" style="border-radius: 20px 20px 0 0;">
-                    <div class="card-conteudo">
-                        <button disabled class="btn-off ouro-500-border"
-                            alt="esta sala está aberta para qualquer um entrar">PÚBLICA</button><br>
-                        <br>
-                        <p class="pergaminho-100">CRIPTA DO REI CINZA</p><br>
-                        <p>Mestre: Fernanda</p><br>
-                        <p>Sistema: 5e</p><br>
-                        <div class="row">
-                            <div class="info">
-                                <img class="icon" src="assets/group-icon.png" alt="icon">
-                                <p>4/6 jogadores</p>
+                    </article>
+                    <article class="card">
+                        <img src="assets/card1.png" alt="Cenário de fantasia para uma campanha de RPG">
+                        <div class="card-conteudo">
+                            <span class="btn-off">PÚBLICA</span>
+                            <h3 style="margin-top:15px">A FLORESTA ESQUECIDA</h3>
+                            <p>Mestre: Rafael</p>
+                            <p>Sistema: Tormenta20</p>
+                            <div class="card-rodape">
+                                <div class="info"><img src="assets/group-icon.png" alt=""><span>3/5 jogadores</span>
+                                </div>
+                                <a class="btn-card" href="salas.html">ENTRAR</a>
                             </div>
-                            <button class="ouro-500-border ouro-500p btn-card">ENTRAR</button>
                         </div>
-                    </div>
+                    </article>
+                    <article class="card">
+                        <img src="assets/card1.png" alt="Cenário de fantasia para uma campanha de RPG">
+                        <div class="card-conteudo">
+                            <span class="btn-off">PÚBLICA</span>
+                            <h3 style="margin-top:15px">SOMBRAS DE ASTRA</h3>
+                            <p>Mestre: Lucas</p>
+                            <p>Sistema: Ordem Paranormal</p>
+                            <div class="card-rodape">
+                                <div class="info"><img src="assets/group-icon.png" alt=""><span>5/6 jogadores</span>
+                                </div>
+                                <a class="btn-card" href="salas.html">ENTRAR</a>
+                            </div>
+                        </div>
+                    </article>
                 </div>
             </div>
         </section>
+
+        <section class="section container">
+            <div class="section-title">
+                <p class="eyebrow">FERRAMENTAS PARA SUA MESA</p>
+                <h2>TUDO EM UM SÓ LUGAR</h2>
+            </div>
+            <div class="sec2">
+                <article class="bloco"><img src="assets/dice_icn.png" alt="">
+                    <h3>Rolagem de dados</h3>
+                    <p>Role dados e acompanhe os resultados das jogadas.</p>
+                </article>
+                <article class="bloco"><img src="assets/ficha_icn.png" alt="">
+                    <h3>Fichas personalizadas</h3>
+                    <p>Crie e gerencie personagens com atributos próprios.</p>
+                </article>
+                <article class="bloco"><img src="assets/map_icn.png" alt="">
+                    <h3>Mapas e cenários</h3>
+                    <p>Explore ambientes e organize suas aventuras.</p>
+                </article>
+                <article class="bloco"><img src="assets/group_icn.png" alt="">
+                    <h3>Sessões personalizadas</h3>
+                    <p>Crie salas e convide seus amigos para jogar.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section container">
+            <div class="section-title">
+                <p class="eyebrow">É SIMPLES COMEÇAR</p>
+                <h2>SUA AVENTURA EM 3 PASSOS</h2>
+            </div>
+            <div class="etapas">
+                <article class="etapa"><span class="numero">1</span>
+                    <div class="conteudo">
+                        <h3>Crie ou encontre uma sala</h3>
+                        <p>Escolha uma aventura ou monte sua própria campanha.</p>
+                    </div>
+                </article>
+                <article class="etapa"><span class="numero">2</span>
+                    <div class="conteudo">
+                        <h3>Prepare seu personagem</h3>
+                        <p>Crie sua ficha e organize seus atributos.</p>
+                    </div>
+                </article>
+                <article class="etapa"><span class="numero">3</span>
+                    <div class="conteudo">
+                        <h3>Reúna seus amigos e jogue!</h3>
+                        <p>Prepare os dados e comece sua aventura.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="section container">
+            <div class="cta">
+                <img class="imgrodape" src="assets/rodape.jpg" alt="Imagem temática de fantasia">
+                <div>
+                    <h2>O DESTINO DA AVENTURA ESTÁ NAS SUAS MÃOS.</h2>
+                    <p>Prepare seus dados, reúna seu grupo e dê vida à sua próxima história.</p><a class="btn-card"
+                        href="salas.html">CRIAR MINHA SALA</a>
+                </div>
+            </div>
+        </section>
+
     </main>
 
     <footer>
         <div class="footerGrid">
-            <div style="width: 20rem;">
-                <img class="LogoTipo" src="assets/LogoTipo.png" alt="LogoTipo_VinteFaces">
-                <p>Salas de RPG de mesa online, sem gambiarra: dados, mapas, fichas e chamadas em um só lugar.</p>
+            <div>
+                <a href="index.html"><img class="LogoTipo" src="assets/LogoTipo.png" alt="Vinte Faces"></a>
+                <p>Salas de RPG de mesa online: dados, mapas, fichas e ferramentas para dar vida às suas aventuras.</p>
             </div>
             <div class="coluna">
                 <span class="ouro-500p">EXPLORAR</span>
-                <a href="">Salas</a>
-                <a href="">Como funciona</a>
-                <a href="">Recursos</a>
-                <a href="">Lives</a>
+                <a href="salas.html">Salas</a>
+                <a href="como-funciona.html">Como funciona</a>
+                <a href="recursos.html">Recursos</a>
+                <a href="lives.html">Lives</a>
             </div>
             <div class="coluna">
-                <span class="ouro-500p">EMPRESA</span>
-                <a href="">Sobre</a>
-                <a href="">Contato</a>
-                <a href="">Termos de uso</a>
-                <a href="">Política de privacidade</a>
+                <span class="ouro-500p">PROJETO</span>
+                <a href="sobre.html">Sobre</a>
+                <a href="contato.html">Contato</a>
             </div>
             <div class="coluna">
                 <span class="ouro-500p">FALE CONOSCO</span>
-                <a href="">contato@vintefaces.com.br</a>
-                <a href="">@vintefaces nas redes</a>
+                <a href="mailto:contato@vintefaces.com.br">contato@vintefaces.com.br</a>
                 <p>Projeto Integrador · FATEC Praia Grande</p>
             </div>
         </div>
-        <hr style="border: none; border-top: 1px solid #40372F;">
-        <div class="row-sa" style="margin: 15px;">
+        <div class="footer-bottom">
             <p>© 2026 Vinte Faces. Todos os direitos reservados.</p>
             <p>Desenvolvimento de Software Multiplataforma · FATEC</p>
         </div>
