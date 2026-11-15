@@ -7,13 +7,18 @@
     <title>Início | Vinte Faces</title>
     <link rel="shortcut icon" href="assets/Icon.png" type="image/x-icon">
     <link rel="stylesheet" href="Style/style.css">
+    <script src="js/menu.js" defer></script>
 </head>
 
 <body>
     <header>
         <a href="index.html"><img class="LogoTipo" src="assets/LogoTipo.png" alt="Vinte Faces"></a>
-        <nav class="navegacao" aria-label="Navegação principal">
-            <a class="btn-ativo" href="index.html">Inicio</a>
+        <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menu">
+            <img class="icone-abrir" src="assets/icones/menu.svg" alt="" width="28" height="28">
+            <img class="icone-fechar" src="assets/icones/fechar.svg" alt="" width="28" height="28">
+        </button>
+        <nav class="navegacao" id="menu-principal" aria-label="Navegação principal">
+            <a class="btn-ativo" href="index.html" aria-current="page">Início</a>
             <a class="h-btn" href="salas.html">Salas</a>
             <a class="h-btn" href="como-funciona.html">Como funciona</a>
             <a class="h-btn" href="recursos.html">Recursos</a>
@@ -22,8 +27,8 @@
             <a class="h-btn" href="contato.html">Contato</a>
         </nav>
         <div class="acoes-header">
-            <a class="h2-btn grafite-800 pergaminho-100" href="login.html">ENTRAR</a>
-            <a class="h2-btn ouro-500" href="salas.html">CRIAR SALA</a>
+            <a class="h2-btn btn-fantasma" href="login.html">ENTRAR</a>
+            <a class="h2-btn ouro-500" href="salas.html#criar">CRIAR SALA</a>
         </div>
     </header>
 
@@ -31,64 +36,143 @@
 
         <section class="sessao">
             <div>
-                <p class="eyebrow">SUA MESA, SEU MUNDO, SUA HISTÓRIA</p>
-                <h1>SUA AVENTURA COMEÇA AQUI.</h1>
-                <p>Reúna seus amigos, crie seu mundo e viva histórias inesquecíveis. Tudo que você precisa para jogar
-                    RPG de mesa em um só lugar.</p>
+                <p class="eyebrow">RPG de mesa online</p>
+                <h1>Sua mesa de RPG, sem gambiarra.</h1>
+                <p>Dados, mapas, fichas e chamadas de vídeo em um só lugar. Crie salas públicas ou privadas, jogue com
+                    seus amigos e transmita suas aventuras ao vivo.</p>
                 <div class="botoes">
-                    <a class="m-btn ouro-500" href="salas.html">EXPLORAR SALAS</a>
-                    <a class="m-btn ouro-500-border" href="salas.html">CRIAR SALA</a>
+                    <a class="m-btn btn-g ouro-500" href="salas.html#criar">CRIAR MINHA SALA</a>
+                    <a class="m-btn btn-g ouro-500-border" href="salas.html">EXPLORAR SALAS</a>
+                </div>
+                <ul class="lista-check diferenciais">
+                    <li>Públicas e privadas</li>
+                    <li>Lives para assistir</li>
+                    <li>Dados e fichas</li>
+                </ul>
+            </div>
+            <div class="hero-imagem">
+                <img class="imgsec1" src="assets/capas/mapa-masmorra.jpg" alt="Mapa de masmorra visto de cima, com tokens dos jogadores">
+                <div class="cartao-flutuante cartao-ao-vivo" aria-hidden="true">
+                    <span class="btn-off badge-ao-vivo">Ao vivo</span>
+                    <span>Cripta do Rei Cinza · 4/6</span>
+                </div>
+                <div class="cartao-flutuante cartao-rolagem" aria-hidden="true">
+                    <p><span class="avatar">C</span>Caio rolou d20 · Destreza</p>
+                    <p class="resultado">17 + 3 = 20 · Sucesso</p>
                 </div>
             </div>
-            <img class="imgsec1" src="assets/dados.jpg" alt="Dados de RPG sobre uma mesa">
+        </section>
+
+        <section class="section fundo-800">
+            <div class="container">
+                <div class="section-title centro">
+                    <p class="eyebrow">Tudo em um só lugar</p>
+                    <h2>Tudo que a mesa precisa</h2>
+                    <p>Chega de alternar entre dez abas: a Vinte Faces reúne as ferramentas do RPG de mesa online.</p>
+                </div>
+                <div class="sec2">
+                    <article class="bloco"><span class="icone-circulo"><img src="assets/icones/dado.svg" alt="" width="28" height="28"></span>
+                        <h3>Dados</h3>
+                        <p>Role d4 a d20 direto na sala, com histórico visível para todos e resultados com modificadores.</p>
+                        <a class="saiba-mais" href="recursos.html#dados">Saiba mais <span class="visualmente-oculto">sobre os dados</span></a>
+                    </article>
+                    <article class="bloco"><span class="icone-circulo"><img src="assets/icones/mapa.svg" alt="" width="28" height="28"></span>
+                        <h3>Mapas</h3>
+                        <p>Suba mapas, mova tokens e revele a masmorra no ritmo da narrativa.</p>
+                        <a class="saiba-mais" href="recursos.html#mapas">Saiba mais <span class="visualmente-oculto">sobre os mapas</span></a>
+                    </article>
+                    <article class="bloco"><span class="icone-circulo"><img src="assets/icones/ficha.svg" alt="" width="28" height="28"></span>
+                        <h3>Fichas</h3>
+                        <p>Fichas de personagem salvas na sala, sempre à mão do jogador e do mestre.</p>
+                        <a class="saiba-mais" href="recursos.html#fichas">Saiba mais <span class="visualmente-oculto">sobre as fichas</span></a>
+                    </article>
+                    <article class="bloco"><span class="icone-circulo"><img src="assets/icones/video.svg" alt="" width="28" height="28"></span>
+                        <h3>Chamadas e lives</h3>
+                        <p>Voz, vídeo e chat na mesa, com opção de transmitir a sessão para espectadores.</p>
+                        <a class="saiba-mais" href="recursos.html#chat">Saiba mais <span class="visualmente-oculto">sobre chamadas e lives</span></a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section container">
+            <div class="duas-colunas passos">
+                <div>
+                    <p class="eyebrow">Como funciona</p>
+                    <h2>Do convite ao primeiro d20 em três passos</h2>
+                    <p class="texto-l">Sem instalar nada e sem configurar ferramentas externas. Abra a sala, chame a mesa e
+                        comece a jogar.</p>
+                    <a class="m-btn ouro-500-border" href="como-funciona.html">VER PASSO A PASSO</a>
+                </div>
+                <div class="etapas">
+                    <article class="etapa"><span class="numero">01</span>
+                        <div class="conteudo">
+                            <h3>Crie sua sala</h3>
+                            <p>Defina o nome, o sistema, o limite de jogadores e se a sala é pública ou privada.</p>
+                        </div>
+                    </article>
+                    <article class="etapa"><span class="numero">02</span>
+                        <div class="conteudo">
+                            <h3>Convide a mesa</h3>
+                            <p>Compartilhe o link com seus jogadores ou deixe a sala aberta para quem quiser entrar.</p>
+                        </div>
+                    </article>
+                    <article class="etapa"><span class="numero">03</span>
+                        <div class="conteudo">
+                            <h3>Jogue e transmita</h3>
+                            <p>Role dados, mova tokens, abra fichas e, se quiser, inicie uma live para espectadores.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
         </section>
 
         <section class="salas-d">
             <div class="container">
-                <div class="section-title">
-                    <p class="eyebrow">ENCONTRE SUA PRÓXIMA CAMPANHA</p>
-                    <h2>SALAS EM DESTAQUE</h2>
+                <div class="section-topo">
+                    <div class="section-title">
+                        <p class="eyebrow">Salas abertas</p>
+                        <h2>Salas em destaque</h2>
+                    </div>
+                    <a class="m-btn ouro-500-border" href="salas.html">VER TODAS AS SALAS</a>
                 </div>
                 <div class="salas">
                     <article class="card">
-                        <img src="assets/card1.png" alt="Cenário de fantasia para uma campanha de RPG">
+                        <img loading="lazy" src="assets/card1.png" alt="Capa da sala Cripta do Rei Cinza: mapa de masmorra">
                         <div class="card-conteudo">
-                            <span class="btn-off">PÚBLICA</span>
-                            <h3 style="margin-top:15px">CRIPTA DO REI CINZA</h3>
-                            <p>Mestre: Fernanda</p>
-                            <p>Sistema: 5e</p>
+                            <div class="badges"><span class="btn-off">Pública</span><span class="btn-off badge-ao-vivo">Ao vivo</span></div>
+                            <h3>Cripta do Rei Cinza</h3>
+                            <p>Mestre: Fernanda · Sistema: 5e</p>
                             <div class="card-rodape">
-                                <div class="info"><img src="assets/group-icon.png" alt=""><span>4/6 jogadores</span>
+                                <div class="info"><img src="assets/icones/usuarios.svg" alt="" width="20" height="20"><span>4/6 jogadores</span>
                                 </div>
-                                <a class="btn-card" href="salas.html">ENTRAR</a>
+                                <a class="btn-card" href="salas.html?entrar=cripta">ENTRAR</a>
                             </div>
                         </div>
                     </article>
                     <article class="card">
-                        <img src="assets/card1.png" alt="Cenário de fantasia para uma campanha de RPG">
+                        <img loading="lazy" src="assets/capas/capa2.png" alt="Capa da sala A Taverna do Corvo: planta de uma taverna">
                         <div class="card-conteudo">
-                            <span class="btn-off">PÚBLICA</span>
-                            <h3 style="margin-top:15px">A FLORESTA ESQUECIDA</h3>
-                            <p>Mestre: Rafael</p>
-                            <p>Sistema: Tormenta20</p>
+                            <div class="badges"><span class="btn-off">Privada</span></div>
+                            <h3>A Taverna do Corvo</h3>
+                            <p>Mestre: Davi · Sistema: Call of Cthulhu</p>
                             <div class="card-rodape">
-                                <div class="info"><img src="assets/group-icon.png" alt=""><span>3/5 jogadores</span>
+                                <div class="info"><img src="assets/icones/usuarios.svg" alt="" width="20" height="20"><span>2/5 jogadores</span>
                                 </div>
-                                <a class="btn-card" href="salas.html">ENTRAR</a>
+                                <a class="btn-card" href="salas.html?entrar=taverna">ENTRAR</a>
                             </div>
                         </div>
                     </article>
                     <article class="card">
-                        <img src="assets/card1.png" alt="Cenário de fantasia para uma campanha de RPG">
+                        <img loading="lazy" src="assets/card3.png" alt="Capa da sala Ruínas de Valdoria: mesa de jogo com dados e cartas">
                         <div class="card-conteudo">
-                            <span class="btn-off">PÚBLICA</span>
-                            <h3 style="margin-top:15px">SOMBRAS DE ASTRA</h3>
-                            <p>Mestre: Lucas</p>
-                            <p>Sistema: Ordem Paranormal</p>
+                            <div class="badges"><span class="btn-off">Pública</span></div>
+                            <h3>Ruínas de Valdoria</h3>
+                            <p>Mestre: Marina · Sistema: 5e</p>
                             <div class="card-rodape">
-                                <div class="info"><img src="assets/group-icon.png" alt=""><span>5/6 jogadores</span>
+                                <div class="info"><img src="assets/icones/usuarios.svg" alt="" width="20" height="20"><span>6/6 jogadores</span>
                                 </div>
-                                <a class="btn-card" href="salas.html">ENTRAR</a>
+                                <a class="btn-card" href="salas.html?entrar=ruinas">ENTRAR</a>
                             </div>
                         </div>
                     </article>
@@ -97,64 +181,34 @@
         </section>
 
         <section class="section container">
-            <div class="section-title">
-                <p class="eyebrow">FERRAMENTAS PARA SUA MESA</p>
-                <h2>TUDO EM UM SÓ LUGAR</h2>
-            </div>
-            <div class="sec2">
-                <article class="bloco"><img src="assets/dice_icn.png" alt="">
-                    <h3>Rolagem de dados</h3>
-                    <p>Role dados e acompanhe os resultados das jogadas.</p>
-                </article>
-                <article class="bloco"><img src="assets/ficha_icn.png" alt="">
-                    <h3>Fichas personalizadas</h3>
-                    <p>Crie e gerencie personagens com atributos próprios.</p>
-                </article>
-                <article class="bloco"><img src="assets/map_icn.png" alt="">
-                    <h3>Mapas e cenários</h3>
-                    <p>Explore ambientes e organize suas aventuras.</p>
-                </article>
-                <article class="bloco"><img src="assets/group_icn.png" alt="">
-                    <h3>Sessões personalizadas</h3>
-                    <p>Crie salas e convide seus amigos para jogar.</p>
-                </article>
-            </div>
-        </section>
-
-        <section class="section container">
-            <div class="section-title">
-                <p class="eyebrow">É SIMPLES COMEÇAR</p>
-                <h2>SUA AVENTURA EM 3 PASSOS</h2>
-            </div>
-            <div class="etapas">
-                <article class="etapa"><span class="numero">1</span>
-                    <div class="conteudo">
-                        <h3>Crie ou encontre uma sala</h3>
-                        <p>Escolha uma aventura ou monte sua própria campanha.</p>
-                    </div>
-                </article>
-                <article class="etapa"><span class="numero">2</span>
-                    <div class="conteudo">
-                        <h3>Prepare seu personagem</h3>
-                        <p>Crie sua ficha e organize seus atributos.</p>
-                    </div>
-                </article>
-                <article class="etapa"><span class="numero">3</span>
-                    <div class="conteudo">
-                        <h3>Reúna seus amigos e jogue!</h3>
-                        <p>Prepare os dados e comece sua aventura.</p>
-                    </div>
-                </article>
-            </div>
-        </section>
-
-        <section class="section container">
-            <div class="cta">
-                <img class="imgrodape" src="assets/rodape.jpg" alt="Imagem temática de fantasia">
+            <div class="duas-colunas live">
+                <div class="live-imagem">
+                    <img loading="lazy" class="ilustracao" src="assets/card3.png" alt="Mesa de RPG vista de cima, com dados, cartas e miniaturas">
+                    <span class="btn-off badge-ao-vivo">Ao vivo</span>
+                    <span class="play" aria-hidden="true"><img src="assets/icones/play.svg" alt="" width="32" height="32"></span>
+                </div>
                 <div>
-                    <h2>O DESTINO DA AVENTURA ESTÁ NAS SUAS MÃOS.</h2>
-                    <p>Prepare seus dados, reúna seu grupo e dê vida à sua próxima história.</p><a class="btn-card"
-                        href="salas.html">CRIAR MINHA SALA</a>
+                    <p class="eyebrow">Lives</p>
+                    <h2>Assista aventuras ao vivo</h2>
+                    <p class="texto-l">Quer ver como outras mesas jogam? Entre como espectador em salas que liberaram a
+                        transmissão e acompanhe a história sem interferir na mesa.</p>
+                    <ul class="lista-check">
+                        <li>Espectadores não aparecem na mesa</li>
+                        <li>O mestre decide quando iniciar e encerrar</li>
+                        <li>Chat separado para a plateia</li>
+                    </ul>
+                    <a class="m-btn ouro-500" href="lives.html">VER LIVES</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section container chamada">
+            <div class="cta">
+                <h2>Pronto para rolar o dado?</h2>
+                <p>Crie sua primeira sala em poucos cliques e chame a mesa para jogar.</p>
+                <div class="botoes">
+                    <a class="m-btn btn-g ouro-500" href="salas.html#criar">CRIAR MINHA SALA</a>
+                    <a class="m-btn btn-g btn-fantasma" href="contato.html">FALAR COM A GENTE</a>
                 </div>
             </div>
         </section>
@@ -165,7 +219,7 @@
         <div class="footerGrid">
             <div>
                 <a href="index.html"><img class="LogoTipo" src="assets/LogoTipo.png" alt="Vinte Faces"></a>
-                <p>Salas de RPG de mesa online: dados, mapas, fichas e ferramentas para dar vida às suas aventuras.</p>
+                <p>Salas de RPG de mesa online, sem gambiarra: dados, mapas, fichas e chamadas em um só lugar.</p>
             </div>
             <div class="coluna">
                 <span class="ouro-500p">EXPLORAR</span>
@@ -175,13 +229,14 @@
                 <a href="lives.html">Lives</a>
             </div>
             <div class="coluna">
-                <span class="ouro-500p">PROJETO</span>
+                <span class="ouro-500p">EMPRESA</span>
                 <a href="sobre.html">Sobre</a>
                 <a href="contato.html">Contato</a>
             </div>
             <div class="coluna">
-                <span class="ouro-500p">FALE CONOSCO</span>
+                <span class="ouro-500p">FALE COM A GENTE</span>
                 <a href="mailto:contato@vintefaces.com.br">contato@vintefaces.com.br</a>
+                <p>@vintefaces nas redes</p>
                 <p>Projeto Integrador · FATEC Praia Grande</p>
             </div>
         </div>

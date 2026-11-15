@@ -7,14 +7,24 @@
     <title>Salas | Vinte Faces</title>
     <link rel="shortcut icon" href="assets/Icon.png" type="image/x-icon">
     <link rel="stylesheet" href="Style/style.css">
+    <script src="js/menu.js" defer></script>
+    <script src="js/formulario.js" defer></script>
+    <script src="js/dominio.js" defer></script>
+    <script src="js/dados.js" defer></script>
+    <script src="js/salas.js" defer></script>
+    <script src="js/mesa.js" defer></script>
 </head>
 
 <body>
     <header>
         <a href="index.html"><img class="LogoTipo" src="assets/LogoTipo.png" alt="Vinte Faces"></a>
-        <nav class="navegacao" aria-label="Navegação principal">
-            <a class="h-btn" href="index.html">Inicio</a>
-            <a class="btn-ativo" href="salas.html">Salas</a>
+        <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menu">
+            <img class="icone-abrir" src="assets/icones/menu.svg" alt="" width="28" height="28">
+            <img class="icone-fechar" src="assets/icones/fechar.svg" alt="" width="28" height="28">
+        </button>
+        <nav class="navegacao" id="menu-principal" aria-label="Navegação principal">
+            <a class="h-btn" href="index.html">Início</a>
+            <a class="btn-ativo" href="salas.html" aria-current="page">Salas</a>
             <a class="h-btn" href="como-funciona.html">Como funciona</a>
             <a class="h-btn" href="recursos.html">Recursos</a>
             <a class="h-btn" href="lives.html">Lives</a>
@@ -22,83 +32,219 @@
             <a class="h-btn" href="contato.html">Contato</a>
         </nav>
         <div class="acoes-header">
-            <a class="h2-btn grafite-800 pergaminho-100" href="#">ENTRAR</a>
-            <a class="h2-btn ouro-500" href="login.html">CRIAR SALA</a>
+            <a class="h2-btn btn-fantasma" href="login.html">ENTRAR</a>
+            <a class="h2-btn ouro-500" href="salas.html#criar">CRIAR SALA</a>
         </div>
     </header>
 
     <main>
-        <section class="page-intro container">
-            <p class="eyebrow">ENCONTRE SEU PRÓXIMO GRUPO</p>
-            <h1>SALAS DE AVENTURA</h1>
-            <p>Explore campanhas, conheça novos grupos e encontre uma mesa para viver sua próxima história.</p>
+        <section class="page-intro container topo">
+            <div>
+                <nav class="breadcrumb" aria-label="Você está em">
+                    <a href="index.html">Início</a>
+                    <span aria-current="page">Salas</span>
+                </nav>
+                <h1>Salas abertas</h1>
+                <p>Escolha uma mesa para entrar ou crie a sua. Neste protótipo, salas públicas e privadas aceitam
+                    jogadores enquanto houver vaga; o convite das privadas ainda é simulado.</p>
+            </div>
+            <a class="m-btn btn-g ouro-500" href="#criar">CRIAR SALA</a>
         </section>
 
-        <section class="section container">
-            <div class="section-title">
-                <p class="eyebrow">MESAS DISPONÍVEIS</p>
-                <h2>SALAS EM DESTAQUE</h2>
-                <p>Estas salas são exemplos ilustrativos para apresentar como as campanhas poderão aparecer na
-                    plataforma.</p>
-            </div>
-
-            <div class="salas">
-                <article class="card">
-                    <img src="assets/card1.png" alt="Cenário de fantasia para a campanha Cripta do Rei Cinza">
-                    <div class="card-conteudo">
-                        <span class="btn-off">PÚBLICA</span>
-                        <h3 style="margin-top:15px">CRIPTA DO REI CINZA</h3>
-                        <p>Mestre: Fernanda</p>
-                        <p>Sistema: 5e</p>
-                        <p>Uma antiga cripta guarda segredos que deveriam permanecer esquecidos.</p>
-                        <div class="card-rodape">
-                            <div class="info"><img src="assets/group-icon.png" alt=""><span>4/6 jogadores</span></div>
-                            <a class="btn-card" href="#">ENTRAR</a>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="card">
-                    <img src="assets/card1.png" alt="Cenário de fantasia para a campanha A Floresta Esquecida">
-                    <div class="card-conteudo">
-                        <span class="btn-off">PÚBLICA</span>
-                        <h3 style="margin-top:15px">A FLORESTA ESQUECIDA</h3>
-                        <p>Mestre: Rafael</p>
-                        <p>Sistema: Tormenta20</p>
-                        <p>Uma expedição parte em busca de respostas em uma floresta misteriosa.</p>
-                        <div class="card-rodape">
-                            <div class="info"><img src="assets/group-icon.png" alt=""><span>3/5 jogadores</span></div>
-                            <a class="btn-card" href="#">ENTRAR</a>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="card">
-                    <img src="assets/card1.png" alt="Cenário de fantasia para a campanha Sombras de Astra">
-                    <div class="card-conteudo">
-                        <span class="btn-off">PÚBLICA</span>
-                        <h3 style="margin-top:15px">SOMBRAS DE ASTRA</h3>
-                        <p>Mestre: Lucas</p>
-                        <p>Sistema: Ordem Paranormal</p>
-                        <p>Fenômenos inexplicáveis começam a surgir nos arredores da cidade.</p>
-                        <div class="card-rodape">
-                            <div class="info"><img src="assets/group-icon.png" alt=""><span>5/6 jogadores</span></div>
-                            <a class="btn-card" href="#">ENTRAR</a>
-                        </div>
-                    </div>
-                </article>
-            </div>
-        </section>
-
-        <section class="section container">
-            <div class="cta">
-                <img class="imgrodape" src="assets/rodape.jpg" alt="Ilustração temática de fantasia">
+        <section class="painel mesa container" id="mesa" aria-labelledby="mesa-titulo" hidden>
+            <div class="mesa-topo">
                 <div>
-                    <h2>SUA PRÓPRIA CAMPANHA COMEÇA COM UMA SALA.</h2>
-                    <p>Reúna seus amigos, escolha um sistema e prepare o cenário para uma nova aventura.</p>
-                    <a class="btn-card" href="#">CRIAR MINHA SALA</a>
+                    <p class="eyebrow">Você está na mesa</p>
+                    <div class="badges" id="mesa-badges"></div>
+                    <h2 id="mesa-titulo" tabindex="-1">Mesa</h2>
+                    <p id="mesa-detalhes"></p>
+                </div>
+                <button class="m-btn btn-fantasma" type="button" id="mesa-sair">SAIR DA SALA</button>
+            </div>
+            <div class="mesa-grade">
+                <figure class="mesa-mapa" id="mesa-mapa"></figure>
+                <div class="mesa-lateral">
+                    <div>
+                        <h3 id="titulo-participantes">Participantes</h3>
+                        <ul class="participantes" id="mesa-participantes" aria-labelledby="titulo-participantes"></ul>
+                    </div>
+                    <button class="m-btn ouro-500 mesa-rolar" type="button" id="mesa-rolar">ROLAR D20</button>
+                    <div class="mesa-conversa">
+                        <h3 id="titulo-chat">Chat</h3>
+                        <div class="mesa-chat" id="mesa-chat" role="log" aria-labelledby="titulo-chat" tabindex="0"></div>
+                        <form class="campo-mensagem" id="mesa-form-chat">
+                            <label class="visualmente-oculto" for="mesa-mensagem">Mensagem</label>
+                            <input id="mesa-mensagem" name="conteudo" type="text" placeholder="Escreva uma mensagem..."
+                                autocomplete="off" maxlength="300">
+                            <button type="submit" aria-label="Enviar mensagem"><img src="assets/icones/enviar.svg" alt=""
+                                    width="20" height="20"></button>
+                        </form>
+                    </div>
                 </div>
             </div>
+        </section>
+
+        <section class="container listagem" aria-labelledby="titulo-lista">
+            <h2 class="visualmente-oculto" id="titulo-lista">Lista de salas</h2>
+            <form class="filtros" role="search" action="salas.html">
+                <label class="busca">
+                    <span class="visualmente-oculto">Buscar sala</span>
+                    <input type="search" name="busca" placeholder="Buscar sala..." autocomplete="off">
+                </label>
+                <div class="chips" role="group" aria-label="Filtrar salas">
+                    <button class="chip" type="button" data-filtro="todas" aria-pressed="true">Todas</button>
+                    <button class="chip" type="button" data-filtro="publicas" aria-pressed="false">Públicas</button>
+                    <button class="chip" type="button" data-filtro="privadas" aria-pressed="false">Privadas</button>
+                    <button class="chip" type="button" data-filtro="ao-vivo" aria-pressed="false">Ao vivo</button>
+                </div>
+                <label class="select-sistema">
+                    <span class="visualmente-oculto">Sistema</span>
+                    <select name="sistema">
+                        <option value="">Sistema: todos</option>
+                        <option value="5e">5e</option>
+                        <option value="Call of Cthulhu">Call of Cthulhu</option>
+                        <option value="Tormenta20">Tormenta20</option>
+                        <option value="Ordem Paranormal">Ordem Paranormal</option>
+                    </select>
+                </label>
+            </form>
+
+            <div class="salas">
+                <article class="card" data-publica="true" data-ao-vivo="true" data-sistema="5e">
+                    <img src="assets/card1.png" alt="Capa da sala Cripta do Rei Cinza: mapa de masmorra">
+                    <div class="card-conteudo">
+                        <div class="badges"><span class="btn-off">Pública</span><span class="btn-off badge-ao-vivo">Ao vivo</span></div>
+                        <h3>Cripta do Rei Cinza</h3>
+                        <p>Mestre: Fernanda · Sistema: 5e</p>
+                        <div class="card-rodape">
+                            <div class="info"><img src="assets/icones/usuarios.svg" alt="" width="20" height="20"><span>4/6 jogadores</span></div>
+                            <a class="btn-card" href="#mesa">ENTRAR</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card" data-publica="false" data-ao-vivo="false" data-sistema="Call of Cthulhu">
+                    <img src="assets/capas/capa2.png" alt="Capa da sala A Taverna do Corvo: planta de uma taverna">
+                    <div class="card-conteudo">
+                        <div class="badges"><span class="btn-off">Privada</span></div>
+                        <h3>A Taverna do Corvo</h3>
+                        <p>Mestre: Davi · Sistema: Call of Cthulhu</p>
+                        <div class="card-rodape">
+                            <div class="info"><img src="assets/icones/usuarios.svg" alt="" width="20" height="20"><span>2/5 jogadores</span></div>
+                            <a class="btn-card" href="#mesa">ENTRAR</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card" data-publica="true" data-ao-vivo="false" data-sistema="5e">
+                    <img src="assets/card3.png" alt="Capa da sala Ruínas de Valdoria: mesa de jogo com dados e cartas">
+                    <div class="card-conteudo">
+                        <div class="badges"><span class="btn-off">Pública</span></div>
+                        <h3>Ruínas de Valdoria</h3>
+                        <p>Mestre: Marina · Sistema: 5e</p>
+                        <div class="card-rodape">
+                            <div class="info"><img src="assets/icones/usuarios.svg" alt="" width="20" height="20"><span>6/6 jogadores</span></div>
+                            <a class="btn-card" href="#mesa">ENTRAR</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card" data-publica="true" data-ao-vivo="true" data-sistema="Tormenta20">
+                    <img src="assets/capas/capa4.png" alt="Capa da sala O Mercado das Sombras: mapa de um mercado subterrâneo">
+                    <div class="card-conteudo">
+                        <div class="badges"><span class="btn-off">Pública</span><span class="btn-off badge-ao-vivo">Ao vivo</span></div>
+                        <h3>O Mercado das Sombras</h3>
+                        <p>Mestre: Rafael · Sistema: Tormenta20</p>
+                        <div class="card-rodape">
+                            <div class="info"><img src="assets/icones/usuarios.svg" alt="" width="20" height="20"><span>3/6 jogadores</span></div>
+                            <a class="btn-card" href="#mesa">ENTRAR</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card" data-publica="true" data-ao-vivo="false" data-sistema="5e">
+                    <img src="assets/capas/capa5.png" alt="Capa da sala Torre do Mago Louco: planta de uma torre">
+                    <div class="card-conteudo">
+                        <div class="badges"><span class="btn-off">Pública</span></div>
+                        <h3>Torre do Mago Louco</h3>
+                        <p>Mestre: Ana · Sistema: 5e</p>
+                        <div class="card-rodape">
+                            <div class="info"><img src="assets/icones/usuarios.svg" alt="" width="20" height="20"><span>1/4 jogadores</span></div>
+                            <a class="btn-card" href="#mesa">ENTRAR</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card" data-publica="false" data-ao-vivo="false" data-sistema="Ordem Paranormal">
+                    <img src="assets/capas/capa6.png" alt="Capa da sala Mesa de Domingo: mesa de jogo com dados e cartas">
+                    <div class="card-conteudo">
+                        <div class="badges"><span class="btn-off">Privada</span></div>
+                        <h3>Mesa de Domingo</h3>
+                        <p>Mestre: Lucas · Sistema: Ordem Paranormal</p>
+                        <div class="card-rodape">
+                            <div class="info"><img src="assets/icones/usuarios.svg" alt="" width="20" height="20"><span>5/5 jogadores</span></div>
+                            <a class="btn-card" href="#mesa">ENTRAR</a>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+            <p class="nota" id="salas-vazio" hidden>Nenhuma sala encontrada com esses filtros. Tente outra busca ou
+                <a class="link" href="#criar">crie a sua sala</a>.</p>
+            <p class="visualmente-oculto" id="salas-status" role="status"></p>
+
+            <nav class="paginacao" aria-label="Páginas de salas">
+                <button class="pagina" type="button" aria-label="Página anterior" disabled>‹</button>
+                <button class="pagina" type="button" aria-current="page">1</button>
+                <button class="pagina" type="button" aria-label="Próxima página" disabled>›</button>
+            </nav>
+            <p class="nota">As salas desta página são exemplos do protótipo acadêmico.
+                <button class="link" type="button" id="restaurar-salas" hidden>Restaurar salas de exemplo</button></p>
+        </section>
+
+        <section class="section container" id="criar">
+            <div class="painel faixa">
+                <div>
+                    <h2>Não achou a mesa ideal?</h2>
+                    <p>Crie a sua sala, escolha o sistema e convide quem quiser.</p>
+                </div>
+                <a class="m-btn btn-g ouro-500-border" href="#form-criar" id="abrir-criar" aria-controls="form-criar"
+                    aria-expanded="false">CRIAR MINHA SALA</a>
+            </div>
+            <form class="formulario painel criar-sala" id="form-criar" novalidate hidden aria-labelledby="titulo-criar">
+                <h2 id="titulo-criar">Criar sala</h2>
+                <p class="criar-usuario" id="criar-usuario"></p>
+                <label for="criar-nome">Nome da sala
+                    <input id="criar-nome" name="nome" type="text" placeholder="Ex.: A Cripta Esquecida" maxlength="60"
+                        required aria-describedby="erro-criar-nome">
+                </label>
+                <p class="mensagem-erro" id="erro-criar-nome" hidden>Dê um nome com pelo menos 3 letras.</p>
+                <label for="criar-sistema">Sistema
+                    <select id="criar-sistema" name="sistema" required aria-describedby="erro-criar-sistema">
+                        <option value="">Selecione o sistema</option>
+                        <option value="5e">5e</option>
+                        <option value="Call of Cthulhu">Call of Cthulhu</option>
+                        <option value="Tormenta20">Tormenta20</option>
+                        <option value="Ordem Paranormal">Ordem Paranormal</option>
+                    </select>
+                </label>
+                <p class="mensagem-erro" id="erro-criar-sistema" hidden>Escolha o sistema da mesa.</p>
+                <fieldset class="opcoes">
+                    <legend>Visibilidade</legend>
+                    <label><input type="radio" name="publica" value="true" checked> Pública</label>
+                    <label><input type="radio" name="publica" value="false"> Privada</label>
+                </fieldset>
+                <label for="criar-limite">Limite de jogadores
+                    <input id="criar-limite" name="limiteJogadores" type="number" min="2" max="10" value="5" required
+                        inputmode="numeric" aria-describedby="erro-criar-limite">
+                </label>
+                <p class="mensagem-erro" id="erro-criar-limite" hidden>Use um número de 2 a 10 jogadores.</p>
+                <label class="opcao"><input type="checkbox" name="aoVivo"> Transmitir ao vivo</label>
+                <div class="botoes">
+                    <button class="m-btn btn-g ouro-500" type="submit">CRIAR SALA</button>
+                    <button class="m-btn btn-g btn-fantasma" type="button" id="cancelar-criar">CANCELAR</button>
+                </div>
+            </form>
         </section>
     </main>
 
@@ -106,7 +252,7 @@
         <div class="footerGrid">
             <div>
                 <a href="index.html"><img class="LogoTipo" src="assets/LogoTipo.png" alt="Vinte Faces"></a>
-                <p>Salas de RPG de mesa online: dados, mapas, fichas e ferramentas para dar vida às suas aventuras.</p>
+                <p>Salas de RPG de mesa online, sem gambiarra: dados, mapas, fichas e chamadas em um só lugar.</p>
             </div>
             <div class="coluna">
                 <span class="ouro-500p">EXPLORAR</span>
@@ -116,13 +262,14 @@
                 <a href="lives.html">Lives</a>
             </div>
             <div class="coluna">
-                <span class="ouro-500p">PROJETO</span>
+                <span class="ouro-500p">EMPRESA</span>
                 <a href="sobre.html">Sobre</a>
                 <a href="contato.html">Contato</a>
             </div>
             <div class="coluna">
-                <span class="ouro-500p">FALE CONOSCO</span>
+                <span class="ouro-500p">FALE COM A GENTE</span>
                 <a href="mailto:contato@vintefaces.com.br">contato@vintefaces.com.br</a>
+                <p>@vintefaces nas redes</p>
                 <p>Projeto Integrador · FATEC Praia Grande</p>
             </div>
         </div>

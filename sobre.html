@@ -7,67 +7,136 @@
     <title>Sobre | Vinte Faces</title>
     <link rel="shortcut icon" href="assets/Icon.png" type="image/x-icon">
     <link rel="stylesheet" href="Style/style.css">
+    <script src="js/menu.js" defer></script>
 </head>
 
 <body>
     <header>
         <a href="index.html"><img class="LogoTipo" src="assets/LogoTipo.png" alt="Vinte Faces"></a>
-        <nav class="navegacao" aria-label="Navegação principal">
-            <a class="h-btn" href="index.html">Inicio</a>
+        <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menu">
+            <img class="icone-abrir" src="assets/icones/menu.svg" alt="" width="28" height="28">
+            <img class="icone-fechar" src="assets/icones/fechar.svg" alt="" width="28" height="28">
+        </button>
+        <nav class="navegacao" id="menu-principal" aria-label="Navegação principal">
+            <a class="h-btn" href="index.html">Início</a>
             <a class="h-btn" href="salas.html">Salas</a>
             <a class="h-btn" href="como-funciona.html">Como funciona</a>
             <a class="h-btn" href="recursos.html">Recursos</a>
             <a class="h-btn" href="lives.html">Lives</a>
-            <a class="btn-ativo" href="sobre.html">Sobre</a>
+            <a class="btn-ativo" href="sobre.html" aria-current="page">Sobre</a>
             <a class="h-btn" href="contato.html">Contato</a>
         </nav>
         <div class="acoes-header">
-            <a class="h2-btn grafite-800 pergaminho-100" href="#">ENTRAR</a>
-            <a class="h2-btn ouro-500" href="login.html">CRIAR SALA</a>
+            <a class="h2-btn btn-fantasma" href="login.html">ENTRAR</a>
+            <a class="h2-btn ouro-500" href="salas.html#criar">CRIAR SALA</a>
         </div>
     </header>
 
     <main>
 
-        <section class="page-intro container">
-            <p class="eyebrow">CONHEÇA O PROJETO</p>
-            <h1>SOBRE O VINTE FACES</h1>
-            <p>Uma proposta para aproximar jogadores, mestres e histórias em um ambiente digital pensado para RPG de
-                mesa.</p>
-        </section>
-        <section class="section container">
-            <div class="duas-colunas">
-                <div>
-                    <p class="eyebrow">NOSSA IDEIA</p>
-                    <h2>UM ESPAÇO PARA CRIAR HISTÓRIAS.</h2>
-                    <p>O Vinte Faces nasceu da ideia de reunir, em uma única plataforma, recursos que ajudam a organizar
-                        e aproveitar partidas de RPG de mesa online.</p>
-                    <p style="margin-top:14px">A proposta é oferecer um ambiente intuitivo no qual mestres possam
-                        estruturar suas sessões e jogadores possam preparar seus personagens e participar das aventuras.
-                    </p>
+        <section class="sessao interna">
+            <div>
+                <nav class="breadcrumb" aria-label="Você está em">
+                    <a href="index.html">Início</a>
+                    <span aria-current="page">Sobre</span>
+                </nav>
+                <h1>Feita por quem joga RPG</h1>
+                <p>A Vinte Faces nasceu para acabar com a gambiarra do RPG de mesa online: uma plataforma só, com tudo
+                    que a mesa precisa para contar boas histórias.</p>
+                <div class="botoes">
+                    <a class="m-btn btn-g ouro-500" href="recursos.html">CONHECER OS RECURSOS</a>
+                    <a class="m-btn btn-g ouro-500-border" href="contato.html">FALE COM A GENTE</a>
                 </div>
-                <img class="ilustracao" src="assets/dados.jpg" alt="Dados de RPG representando o universo do projeto">
+            </div>
+            <img class="imgsec1" src="assets/capas/mesa-rpg.jpg" alt="Mesa de RPG vista de cima, com dados e cartas">
+        </section>
+
+        <section class="section fundo-800">
+            <div class="container duas-colunas">
+                <img loading="lazy" class="ilustracao" src="assets/capas/mapa-problema.jpg" alt="Mapa de masmorra com tokens dos jogadores">
+                <div>
+                    <p class="eyebrow">O problema</p>
+                    <h2>Dez abas abertas para uma mesa de RPG</h2>
+                    <p class="texto-l">Jogar RPG de mesa online costuma significar uma ferramenta para o mapa, outra para os
+                        dados, outra para as fichas e mais uma para a chamada. Cada troca de aba tira a mesa da história.</p>
+                    <p>Nossa proposta é reunir tudo num único lugar, para que o mestre cuide da narrativa e os jogadores
+                        cuidem dos personagens.</p>
+                </div>
             </div>
         </section>
+
         <section class="section container">
-            <div class="sec2">
-                <article class="bloco">
-                    <h3>Nosso objetivo</h3>
-                    <p>Facilitar a organização de mesas virtuais e deixar as ferramentas essenciais mais acessíveis aos
-                        grupos.</p>
+            <div class="section-title centro">
+                <p class="eyebrow">O que nos guia</p>
+                <h2>Nossos princípios</h2>
+            </div>
+            <div class="sec2 principios">
+                <article class="bloco"><span class="icone-circulo"><img src="assets/icones/dado.svg" alt="" width="28" height="28"></span>
+                    <h3>Sem gambiarra</h3>
+                    <p>Dados, mapas, fichas e chamadas funcionando juntos, sem remendos entre ferramentas.</p>
                 </article>
-                <article class="bloco">
-                    <h3>O que valorizamos</h3>
-                    <p>Criatividade, colaboração, acessibilidade e liberdade para contar histórias de diferentes
-                        maneiras.</p>
+                <article class="bloco"><span class="icone-circulo"><img src="assets/icones/usuarios-ouro.svg" alt="" width="28" height="28"></span>
+                    <h3>Mesa para todos</h3>
+                    <p>Salas públicas, privadas e lives: cada grupo joga e compartilha do seu jeito.</p>
+                </article>
+                <article class="bloco"><span class="icone-circulo"><img src="assets/icones/ficha.svg" alt="" width="28" height="28"></span>
+                    <h3>Narrativa em primeiro lugar</h3>
+                    <p>A tecnologia fica em segundo plano para que a história seja a protagonista.</p>
                 </article>
             </div>
         </section>
+
+        <section class="section fundo-800">
+            <div class="container identidade">
+                <div>
+                    <p class="eyebrow">Identidade</p>
+                    <h2>Couro, ouro e vinho</h2>
+                    <p class="texto-l">A paleta remete ao couro e ao pergaminho do RPG de mesa. O dourado marca ações e
+                        destaques; o vinho é o acento narrativo. Cinzel traz o ar épico e Inter garante leitura limpa na
+                        interface.</p>
+                </div>
+                <ul class="amostras">
+                    <li><span class="amostra amostra-couro"></span>Couro<span>#6B4226</span></li>
+                    <li><span class="amostra amostra-ouro"></span>Ouro<span>#C9A227</span></li>
+                    <li><span class="amostra amostra-vinho"></span>Vinho<span>#7B1F2E</span></li>
+                </ul>
+            </div>
+        </section>
+
         <section class="section container">
-            <p class="eyebrow">PROJETO ACADÊMICO</p>
-            <h2>DESENVOLVIDO NA FATEC PRAIA GRANDE</h2>
-            <p>O Vinte Faces é desenvolvido como Projeto Integrador do curso de Desenvolvimento de Software
-                Multiplataforma.</p>
+            <div class="section-title centro">
+                <p class="eyebrow">Quem faz</p>
+                <h2>A equipe</h2>
+                <p>Projeto Integrador do curso de Desenvolvimento de Software Multiplataforma da FATEC Praia Grande.</p>
+            </div>
+            <div class="sec2 equipe">
+                <article class="painel">
+                    <span class="avatar avatar-xg avatar-couro" aria-hidden="true">P</span>
+                    <h3>Pedro Henrique Rodrigues Bastos</h3>
+                    <p>Integrante da equipe</p>
+                </article>
+                <article class="painel">
+                    <span class="avatar avatar-xg" aria-hidden="true">M</span>
+                    <h3>Marcelo Nascimento dos Santos</h3>
+                    <p>Integrante da equipe</p>
+                </article>
+                <article class="painel">
+                    <span class="avatar avatar-xg avatar-ouro" aria-hidden="true">C</span>
+                    <h3>Cauã Vitor Silva Santos</h3>
+                    <p>Integrante da equipe</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section container chamada">
+            <div class="cta">
+                <h2>Venha jogar com a gente</h2>
+                <p>Crie uma sala ou entre em uma mesa aberta.</p>
+                <div class="botoes">
+                    <a class="m-btn btn-g ouro-500" href="salas.html#criar">CRIAR MINHA SALA</a>
+                    <a class="m-btn btn-g btn-fantasma" href="salas.html">VER SALAS</a>
+                </div>
+            </div>
         </section>
 
     </main>
@@ -76,7 +145,7 @@
         <div class="footerGrid">
             <div>
                 <a href="index.html"><img class="LogoTipo" src="assets/LogoTipo.png" alt="Vinte Faces"></a>
-                <p>Salas de RPG de mesa online: dados, mapas, fichas e ferramentas para dar vida às suas aventuras.</p>
+                <p>Salas de RPG de mesa online, sem gambiarra: dados, mapas, fichas e chamadas em um só lugar.</p>
             </div>
             <div class="coluna">
                 <span class="ouro-500p">EXPLORAR</span>
@@ -86,13 +155,14 @@
                 <a href="lives.html">Lives</a>
             </div>
             <div class="coluna">
-                <span class="ouro-500p">PROJETO</span>
+                <span class="ouro-500p">EMPRESA</span>
                 <a href="sobre.html">Sobre</a>
                 <a href="contato.html">Contato</a>
             </div>
             <div class="coluna">
-                <span class="ouro-500p">FALE CONOSCO</span>
+                <span class="ouro-500p">FALE COM A GENTE</span>
                 <a href="mailto:contato@vintefaces.com.br">contato@vintefaces.com.br</a>
+                <p>@vintefaces nas redes</p>
                 <p>Projeto Integrador · FATEC Praia Grande</p>
             </div>
         </div>

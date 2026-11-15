@@ -7,61 +7,103 @@
     <title>Contato | Vinte Faces</title>
     <link rel="shortcut icon" href="assets/Icon.png" type="image/x-icon">
     <link rel="stylesheet" href="Style/style.css">
+    <script src="js/menu.js" defer></script>
+    <script src="js/formulario.js" defer></script>
+    <script src="js/contato.js" defer></script>
 </head>
 
 <body>
     <header>
         <a href="index.html"><img class="LogoTipo" src="assets/LogoTipo.png" alt="Vinte Faces"></a>
-        <nav class="navegacao" aria-label="Navegação principal">
-            <a class="h-btn" href="index.html">Inicio</a>
+        <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menu">
+            <img class="icone-abrir" src="assets/icones/menu.svg" alt="" width="28" height="28">
+            <img class="icone-fechar" src="assets/icones/fechar.svg" alt="" width="28" height="28">
+        </button>
+        <nav class="navegacao" id="menu-principal" aria-label="Navegação principal">
+            <a class="h-btn" href="index.html">Início</a>
             <a class="h-btn" href="salas.html">Salas</a>
             <a class="h-btn" href="como-funciona.html">Como funciona</a>
             <a class="h-btn" href="recursos.html">Recursos</a>
             <a class="h-btn" href="lives.html">Lives</a>
             <a class="h-btn" href="sobre.html">Sobre</a>
-            <a class="btn-ativo" href="contato.html">Contato</a>
+            <a class="btn-ativo" href="contato.html" aria-current="page">Contato</a>
         </nav>
         <div class="acoes-header">
-            <a class="h2-btn grafite-800 pergaminho-100" href="#">ENTRAR</a>
-            <a class="h2-btn ouro-500" href="login.html">CRIAR SALA</a>
+            <a class="h2-btn btn-fantasma" href="login.html">ENTRAR</a>
+            <a class="h2-btn ouro-500" href="salas.html#criar">CRIAR SALA</a>
         </div>
     </header>
 
     <main>
 
-        <section class="page-intro container">
-            <p class="eyebrow">ESTAMOS À DISPOSIÇÃO</p>
-            <h1>CONTATO</h1>
-            <p>Tem alguma dúvida, sugestão ou ideia para o Vinte Faces? Entre em contato com a equipe do projeto.</p>
+        <section class="page-intro container topo">
+            <div>
+                <nav class="breadcrumb" aria-label="Você está em">
+                    <a href="index.html">Início</a>
+                    <span aria-current="page">Contato</span>
+                </nav>
+                <h1>Fale com a mesa</h1>
+                <p>Dúvidas, sugestões ou parcerias? Envie uma mensagem e responderemos o quanto antes.</p>
+            </div>
         </section>
-        <section class="section container">
+        <section class="container contato-secao">
             <div class="contato-grid">
-                <aside class="contato-info painel">
-                    <h2>FALE COM A GENTE</h2>
-                    <p>Será um prazer receber sua mensagem e conhecer suas sugestões para a plataforma.</p>
-                    <p><strong class="pergaminho-100">E-mail:</strong><br><a
-                            href="mailto:contato@vintefaces.com.br">contato@vintefaces.com.br</a></p>
-                    <p><strong class="pergaminho-100">Projeto:</strong><br>Vinte Faces · FATEC Praia Grande</p>
-                </aside>
-                <form class="formulario painel" action="#" method="post">
+                <form class="formulario painel" id="form-contato" method="post" novalidate>
+                    <h2>Envie uma mensagem</h2>
                     <label for="nome">Nome
-                        <input id="nome" name="nome" type="text" placeholder="Como podemos chamar você?" required>
+                        <input id="nome" name="nome" type="text" placeholder="Como podemos chamar você?"
+                            autocomplete="name" required aria-describedby="erro-nome">
                     </label>
+                    <p class="mensagem-erro" id="erro-nome" hidden>Informe seu nome.</p>
                     <label for="email">E-mail
-                        <input id="email" name="email" type="email" placeholder="seuemail@exemplo.com" required>
+                        <input id="email" name="email" type="email" placeholder="seuemail@exemplo.com"
+                            autocomplete="email" required aria-describedby="erro-email">
                     </label>
+                    <p class="mensagem-erro" id="erro-email" hidden>Informe um e-mail válido.</p>
                     <label for="assunto">Assunto
-                        <input id="assunto" name="assunto" type="text" placeholder="Sobre o que deseja falar?">
+                        <select id="assunto" name="assunto" required aria-describedby="erro-assunto">
+                            <option value="">Selecione um assunto</option>
+                            <option value="duvida">Dúvida</option>
+                            <option value="sugestao">Sugestão</option>
+                            <option value="parceria">Parceria</option>
+                            <option value="outro">Outro</option>
+                        </select>
                     </label>
+                    <p class="mensagem-erro" id="erro-assunto" hidden>Selecione um assunto.</p>
                     <label for="mensagem">Mensagem
-                        <textarea id="mensagem" name="mensagem" placeholder="Escreva sua mensagem..."
-                            required></textarea>
+                        <textarea id="mensagem" name="mensagem" placeholder="Conte como podemos ajudar..."
+                            required aria-describedby="erro-mensagem"></textarea>
                     </label>
-                    <button class="m-btn ouro-500" type="button"
-                        onclick="alert('Este formulário é demonstrativo e ainda não envia mensagens.')">ENVIAR
-                        MENSAGEM</button>
+                    <p class="mensagem-erro" id="erro-mensagem" hidden>Escreva sua mensagem (pelo menos 10 caracteres).</p>
+                    <button class="m-btn btn-g ouro-500" type="submit">ENVIAR MENSAGEM</button>
+                    <p class="mensagem-sucesso" id="contato-sucesso" role="status"></p>
                     <small>Formulário demonstrativo: o envio será implementado futuramente.</small>
                 </form>
+                <aside class="contato-info">
+                    <img class="ilustracao" src="assets/capas/mapa-contato.jpg" alt="Mapa de masmorra com tokens dos jogadores">
+                    <div class="painel contato-card">
+                        <span class="icone-circulo"><img src="assets/icones/email.svg" alt="" width="24" height="24"></span>
+                        <div>
+                            <p class="eyebrow">E-mail</p>
+                            <a href="mailto:contato@vintefaces.com.br">contato@vintefaces.com.br</a>
+                        </div>
+                    </div>
+                    <div class="painel contato-card">
+                        <span class="icone-circulo"><img src="assets/icones/relogio.svg" alt="" width="24" height="24"></span>
+                        <div>
+                            <p class="eyebrow">Atendimento</p>
+                            <p>Segunda a sexta, das 9h às 18h</p>
+                        </div>
+                    </div>
+                    <div class="painel contato-card">
+                        <span class="icone-circulo"><img src="assets/icones/globo.svg" alt="" width="24" height="24"></span>
+                        <div>
+                            <p class="eyebrow">Redes sociais</p>
+                            <p>@vintefaces</p>
+                        </div>
+                    </div>
+                    <a class="painel faq-link" href="como-funciona.html#faq">Dúvidas rápidas? Veja o FAQ em Como funciona.</a>
+                </aside>
             </div>
         </section>
 
@@ -71,7 +113,7 @@
         <div class="footerGrid">
             <div>
                 <a href="index.html"><img class="LogoTipo" src="assets/LogoTipo.png" alt="Vinte Faces"></a>
-                <p>Salas de RPG de mesa online: dados, mapas, fichas e ferramentas para dar vida às suas aventuras.</p>
+                <p>Salas de RPG de mesa online, sem gambiarra: dados, mapas, fichas e chamadas em um só lugar.</p>
             </div>
             <div class="coluna">
                 <span class="ouro-500p">EXPLORAR</span>
@@ -81,13 +123,14 @@
                 <a href="lives.html">Lives</a>
             </div>
             <div class="coluna">
-                <span class="ouro-500p">PROJETO</span>
+                <span class="ouro-500p">EMPRESA</span>
                 <a href="sobre.html">Sobre</a>
                 <a href="contato.html">Contato</a>
             </div>
             <div class="coluna">
-                <span class="ouro-500p">FALE CONOSCO</span>
+                <span class="ouro-500p">FALE COM A GENTE</span>
                 <a href="mailto:contato@vintefaces.com.br">contato@vintefaces.com.br</a>
+                <p>@vintefaces nas redes</p>
                 <p>Projeto Integrador · FATEC Praia Grande</p>
             </div>
         </div>

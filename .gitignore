@@ -1,0 +1,8 @@
+# Arquivos de trabalho das ferramentas (não fazem parte do site)
+PROMPT.md
+PRODUCT.md
+.impeccable/
+.playwright-mcp/
+
+# Prints gerados nos testes (ficam desatualizados a cada mudança)
+docs/capturas/
