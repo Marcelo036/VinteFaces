@@ -7,85 +7,188 @@
     <title>Recursos | Vinte Faces</title>
     <link rel="shortcut icon" href="assets/Icon.png" type="image/x-icon">
     <link rel="stylesheet" href="Style/style.css">
+    <script src="js/menu.js" defer></script>
 </head>
 
 <body>
     <header>
         <a href="index.html"><img class="LogoTipo" src="assets/LogoTipo.png" alt="Vinte Faces"></a>
-        <nav class="navegacao" aria-label="Navegação principal">
-            <a class="h-btn" href="index.html">Inicio</a>
+        <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menu">
+            <img class="icone-abrir" src="assets/icones/menu.svg" alt="" width="28" height="28">
+            <img class="icone-fechar" src="assets/icones/fechar.svg" alt="" width="28" height="28">
+        </button>
+        <nav class="navegacao" id="menu-principal" aria-label="Navegação principal">
+            <a class="h-btn" href="index.html">Início</a>
             <a class="h-btn" href="salas.html">Salas</a>
             <a class="h-btn" href="como-funciona.html">Como funciona</a>
-            <a class="btn-ativo" href="recursos.html">Recursos</a>
+            <a class="btn-ativo" href="recursos.html" aria-current="page">Recursos</a>
             <a class="h-btn" href="lives.html">Lives</a>
             <a class="h-btn" href="sobre.html">Sobre</a>
             <a class="h-btn" href="contato.html">Contato</a>
         </nav>
         <div class="acoes-header">
-            <a class="h2-btn grafite-800 pergaminho-100" href="#">ENTRAR</a>
-            <a class="h2-btn ouro-500" href="login.html">CRIAR SALA</a>
+            <a class="h2-btn btn-fantasma" href="login.html">ENTRAR</a>
+            <a class="h2-btn ouro-500" href="salas.html#criar">CRIAR SALA</a>
         </div>
     </header>
 
     <main>
 
         <section class="page-intro container">
-            <p class="eyebrow">FERRAMENTAS DA SUA MESA</p>
-            <h1>RECURSOS</h1>
-            <p>Encontre em um só lugar ferramentas para organizar personagens, sessões e os momentos decisivos da sua
-                campanha.</p>
+            <nav class="breadcrumb" aria-label="Você está em">
+                <a href="index.html">Início</a>
+                <span aria-current="page">Recursos</span>
+            </nav>
+            <h1>Tudo que a mesa precisa</h1>
+            <p>Dados, mapas, fichas e comunicação integrados na mesma sala. Menos abas abertas, mais tempo de história.</p>
         </section>
-        <section class="section container">
-            <div class="feature-grid">
-                <article class="painel feature">
-                    <div class="feature-icon">🎲</div>
-                    <div>
-                        <h3>Rolagem de dados</h3>
-                        <p>Faça rolagens durante a sessão e acompanhe os resultados de maneira prática.</p>
+
+        <section class="recurso fundo-800" id="dados">
+            <div class="container duas-colunas">
+                <div>
+                    <span class="icone-circulo"><img src="assets/icones/dado.svg" alt="" width="28" height="28"></span>
+                    <p class="eyebrow">Dados</p>
+                    <h2>Role à vista de todos</h2>
+                    <p class="texto-l">Chega de confiar no “rolei aqui, deu 18”. Cada rolagem aparece no histórico da sala com o
+                        modificador e o resultado.</p>
+                    <ul class="lista-check">
+                        <li>d4, d6, d8, d10, d12 e d20</li>
+                        <li>Modificadores e vantagem/desvantagem</li>
+                        <li>Histórico visível para toda a mesa</li>
+                    </ul>
+                </div>
+                <div class="recurso-midia">
+                    <img class="ilustracao" src="assets/card3.png" alt="Dados de RPG sobre a mesa de jogo, ao lado de cartas">
+                    <div class="cartao-flutuante cartao-rolagem" aria-hidden="true">
+                        <p><span class="avatar">C</span>Caio rolou d20 · Destreza</p>
+                        <p class="resultado">17 + 3 = 20 · Sucesso</p>
                     </div>
-                </article>
-                <article class="painel feature">
-                    <div class="feature-icon">📜</div>
-                    <div>
-                        <h3>Fichas personalizadas</h3>
-                        <p>Crie fichas de personagem e organize atributos, habilidades e informações importantes.</p>
-                    </div>
-                </article>
-                <article class="painel feature">
-                    <div class="feature-icon">🗺️</div>
-                    <div>
-                        <h3>Mapas e cenários</h3>
-                        <p>Tenha um espaço para apoiar a exploração e a organização visual das aventuras.</p>
-                    </div>
-                </article>
-                <article class="painel feature">
-                    <div class="feature-icon">👥</div>
-                    <div>
-                        <h3>Salas de jogo</h3>
-                        <p>Crie sessões, defina suas configurações e convide outros jogadores.</p>
-                    </div>
-                </article>
-                <article class="painel feature">
-                    <div class="feature-icon">⚔️</div>
-                    <div>
-                        <h3>Organização da campanha</h3>
-                        <p>Reúna as informações essenciais para que mestres e jogadores acompanhem a jornada.</p>
-                    </div>
-                </article>
-                <article class="painel feature">
-                    <div class="feature-icon">📡</div>
-                    <div>
-                        <h3>Lives</h3>
-                        <p>Uma área planejada para transmissões e conteúdos ao vivo da comunidade.</p>
-                    </div>
-                </article>
+                </div>
             </div>
         </section>
+
+        <section class="recurso" id="mapas">
+            <div class="container duas-colunas">
+                <div class="recurso-midia">
+                    <img loading="lazy" class="ilustracao" src="assets/capas/mapa-tokens.jpg" alt="Mapa de masmorra com tokens dos jogadores e de criaturas">
+                    <div class="ferramentas" aria-hidden="true">
+                        <img src="assets/icones/usuarios-ouro.svg" alt="" width="24" height="24">
+                        <img src="assets/icones/mais.svg" alt="" width="24" height="24">
+                        <img src="assets/icones/olho.svg" alt="" width="24" height="24">
+                    </div>
+                </div>
+                <div>
+                    <span class="icone-circulo"><img src="assets/icones/mapa.svg" alt="" width="28" height="28"></span>
+                    <p class="eyebrow">Mapas</p>
+                    <h2>Do mapa ao token, sem sair da sala</h2>
+                    <p class="texto-l">Suba o mapa da aventura, mova os tokens dos jogadores e revele a masmorra aos poucos, no
+                        ritmo da narrativa.</p>
+                    <ul class="lista-check">
+                        <li>Upload de mapas e grade ajustável</li>
+                        <li>Tokens para jogadores e criaturas</li>
+                        <li>Controle do que cada jogador enxerga</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="recurso fundo-800" id="fichas">
+            <div class="container duas-colunas">
+                <div>
+                    <span class="icone-circulo"><img src="assets/icones/ficha.svg" alt="" width="28" height="28"></span>
+                    <p class="eyebrow">Fichas</p>
+                    <h2>Ficha sempre à mão</h2>
+                    <p class="texto-l">Jogadores e mestre consultam a ficha dentro da sala, sem alternar com PDFs ou planilhas. Os
+                        testes já usam os valores certos.</p>
+                    <ul class="lista-check">
+                        <li>Atributos, perícias e vida</li>
+                        <li>Salvas por personagem</li>
+                        <li>Integradas à rolagem de dados</li>
+                    </ul>
+                </div>
+                <div class="painel ficha" role="img"
+                    aria-label="Exemplo de ficha: Aldric, o Errante, guerreiro de nível 5, com 32 de 40 pontos de vida">
+                    <div class="ficha-topo">
+                        <span class="avatar avatar-g">A</span>
+                        <div>
+                            <p class="ficha-nome">Aldric, o Errante</p>
+                            <p>Guerreiro · Nível 5</p>
+                        </div>
+                        <span class="btn-off">Ficha</span>
+                    </div>
+                    <ul class="atributos">
+                        <li><span>FOR</span><strong>16</strong>+3</li>
+                        <li><span>DES</span><strong>14</strong>+2</li>
+                        <li><span>CON</span><strong>15</strong>+2</li>
+                        <li><span>INT</span><strong>10</strong>+0</li>
+                        <li><span>SAB</span><strong>12</strong>+1</li>
+                        <li><span>CAR</span><strong>8</strong>-1</li>
+                    </ul>
+                    <div class="vida">
+                        <p><span>Pontos de vida</span><span>32 / 40</span></p>
+                        <span class="barra"><span></span></span>
+                    </div>
+                    <ul class="pericias">
+                        <li>Atletismo +5</li>
+                        <li>Percepção +3</li>
+                        <li>Intimidação +2</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="recurso" id="chat">
+            <div class="container duas-colunas">
+                <div class="painel chat-mock" role="img"
+                    aria-label="Exemplo de chat da sala Cripta do Rei Cinza, com mensagens do jogador Caio e da mestre Fernanda e uma rolagem de d20">
+                    <div class="presenca">
+                        <span class="avatar">C</span><span class="avatar avatar-couro">M</span><span class="avatar avatar-ouro">F</span>
+                        <p>3 online · Cripta do Rei Cinza</p>
+                        <img src="assets/icones/video.svg" alt="" width="24" height="24">
+                    </div>
+                    <div class="bolha">
+                        <p class="autor">Caio</p>
+                        <p>Vou investigar a porta com cuidado.</p>
+                        <p>20:41</p>
+                    </div>
+                    <div class="bolha bolha-mestre">
+                        <p class="autor">Fernanda <span class="btn-off">Mestre</span></p>
+                        <p>Vocês ouvem passos atrás da parede.</p>
+                        <p>20:42</p>
+                    </div>
+                    <div class="bolha cartao-rolagem">
+                        <p>Caio rolou d20 · Destreza</p>
+                        <p class="resultado">17 + 3 = 20 · Sucesso</p>
+                    </div>
+                    <div class="campo-mensagem">
+                        <span>Escreva uma mensagem...</span>
+                        <img src="assets/icones/enviar.svg" alt="" width="20" height="20">
+                    </div>
+                </div>
+                <div>
+                    <span class="icone-circulo"><img src="assets/icones/chat.svg" alt="" width="28" height="28"></span>
+                    <p class="eyebrow">Chat e chamadas</p>
+                    <h2>Conversem como numa mesa de verdade</h2>
+                    <p class="texto-l">Voz, vídeo e chat na mesma tela do jogo, com rolagens aparecendo no fluxo da conversa e
+                        indicação de quem está online.</p>
+                    <ul class="lista-check">
+                        <li>Chamada de voz e vídeo na sala</li>
+                        <li>Chat com identificação do mestre</li>
+                        <li>Presença: online, offline e vez do jogador</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
         <section class="section container">
-            <p class="eyebrow">UMA MESA DO SEU JEITO</p>
-            <h2>MAIS TEMPO PARA A HISTÓRIA, MENOS TEMPO ORGANIZANDO.</h2>
-            <p>As ferramentas do Vinte Faces foram pensadas para apoiar diferentes estilos de jogo. Cada grupo pode
-                construir sua experiência de acordo com o sistema e a campanha escolhidos.</p>
+            <div class="cta">
+                <h2>Monte sua mesa agora</h2>
+                <p>Crie uma sala e teste todos os recursos com seus amigos.</p>
+                <div class="botoes">
+                    <a class="m-btn btn-g ouro-500" href="salas.html#criar">CRIAR MINHA SALA</a>
+                    <a class="m-btn btn-g btn-fantasma" href="como-funciona.html">VER COMO FUNCIONA</a>
+                </div>
+            </div>
         </section>
 
     </main>
@@ -94,7 +197,7 @@
         <div class="footerGrid">
             <div>
                 <a href="index.html"><img class="LogoTipo" src="assets/LogoTipo.png" alt="Vinte Faces"></a>
-                <p>Salas de RPG de mesa online: dados, mapas, fichas e ferramentas para dar vida às suas aventuras.</p>
+                <p>Salas de RPG de mesa online, sem gambiarra: dados, mapas, fichas e chamadas em um só lugar.</p>
             </div>
             <div class="coluna">
                 <span class="ouro-500p">EXPLORAR</span>
@@ -104,13 +207,14 @@
                 <a href="lives.html">Lives</a>
             </div>
             <div class="coluna">
-                <span class="ouro-500p">PROJETO</span>
+                <span class="ouro-500p">EMPRESA</span>
                 <a href="sobre.html">Sobre</a>
                 <a href="contato.html">Contato</a>
             </div>
             <div class="coluna">
-                <span class="ouro-500p">FALE CONOSCO</span>
+                <span class="ouro-500p">FALE COM A GENTE</span>
                 <a href="mailto:contato@vintefaces.com.br">contato@vintefaces.com.br</a>
+                <p>@vintefaces nas redes</p>
                 <p>Projeto Integrador · FATEC Praia Grande</p>
             </div>
         </div>

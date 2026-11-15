@@ -7,70 +7,160 @@
     <title>Como funciona | Vinte Faces</title>
     <link rel="shortcut icon" href="assets/Icon.png" type="image/x-icon">
     <link rel="stylesheet" href="Style/style.css">
+    <script src="js/menu.js" defer></script>
 </head>
 
 <body>
     <header>
         <a href="index.html"><img class="LogoTipo" src="assets/LogoTipo.png" alt="Vinte Faces"></a>
-        <nav class="navegacao" aria-label="Navegação principal">
-            <a class="h-btn" href="index.html">Inicio</a>
+        <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menu">
+            <img class="icone-abrir" src="assets/icones/menu.svg" alt="" width="28" height="28">
+            <img class="icone-fechar" src="assets/icones/fechar.svg" alt="" width="28" height="28">
+        </button>
+        <nav class="navegacao" id="menu-principal" aria-label="Navegação principal">
+            <a class="h-btn" href="index.html">Início</a>
             <a class="h-btn" href="salas.html">Salas</a>
-            <a class="btn-ativo" href="como-funciona.html">Como funciona</a>
+            <a class="btn-ativo" href="como-funciona.html" aria-current="page">Como funciona</a>
             <a class="h-btn" href="recursos.html">Recursos</a>
             <a class="h-btn" href="lives.html">Lives</a>
             <a class="h-btn" href="sobre.html">Sobre</a>
             <a class="h-btn" href="contato.html">Contato</a>
         </nav>
         <div class="acoes-header">
-            <a class="h2-btn grafite-800 pergaminho-100" href="#">ENTRAR</a>
-            <a class="h2-btn ouro-500" href="login.html">CRIAR SALA</a>
+            <a class="h2-btn btn-fantasma" href="login.html">ENTRAR</a>
+            <a class="h2-btn ouro-500" href="salas.html#criar">CRIAR SALA</a>
         </div>
     </header>
 
     <main>
 
-        <section class="page-intro container">
-            <p class="eyebrow">COMECE SUA JORNADA</p>
-            <h1>COMO FUNCIONA?</h1>
-            <p>O Vinte Faces reúne os principais elementos de uma mesa de RPG online para que você possa organizar suas
-                sessões e aproveitar a aventura com seu grupo.</p>
+        <section class="sessao interna">
+            <div>
+                <nav class="breadcrumb" aria-label="Você está em">
+                    <a href="index.html">Início</a>
+                    <span aria-current="page">Como funciona</span>
+                </nav>
+                <h1>Do convite ao primeiro d20</h1>
+                <p>A Vinte Faces junta num só lugar o que o RPG de mesa online costuma espalhar por várias ferramentas.
+                    Veja como é jogar sem gambiarra.</p>
+                <div class="botoes">
+                    <a class="m-btn btn-g ouro-500" href="salas.html#criar">CRIAR MINHA SALA</a>
+                    <a class="m-btn btn-g ouro-500-border" href="recursos.html">VER RECURSOS</a>
+                </div>
+            </div>
+            <img class="imgsec1" src="assets/capas/mesa-rpg.jpg" alt="Mesa de RPG vista de cima, com dados e cartas">
         </section>
+
+        <section class="section fundo-800">
+            <div class="container">
+                <div class="section-title centro">
+                    <p class="eyebrow">Passo a passo</p>
+                    <h2>Quatro passos até a aventura</h2>
+                    <p>Tudo acontece no navegador, sem instalar nada.</p>
+                </div>
+                <div class="etapas grade">
+                    <article class="etapa"><span class="icone-circulo"><img src="assets/icones/dado.svg" alt="" width="32" height="32"></span>
+                        <div class="conteudo">
+                            <p class="eyebrow">Passo 01</p>
+                            <h3>Crie sua sala</h3>
+                            <p>Escolha nome, sistema, limite de jogadores e se a sala será pública ou privada.</p>
+                        </div>
+                    </article>
+                    <article class="etapa"><span class="icone-circulo"><img src="assets/icones/usuarios-ouro.svg" alt="" width="32" height="32"></span>
+                        <div class="conteudo">
+                            <p class="eyebrow">Passo 02</p>
+                            <h3>Convide a mesa</h3>
+                            <p>Envie o link para seus jogadores ou deixe a sala aberta na lista de salas públicas.</p>
+                        </div>
+                    </article>
+                    <article class="etapa"><span class="icone-circulo"><img src="assets/icones/mapa.svg" alt="" width="32" height="32"></span>
+                        <div class="conteudo">
+                            <p class="eyebrow">Passo 03</p>
+                            <h3>Monte a cena</h3>
+                            <p>Suba o mapa, posicione tokens e abra as fichas dos personagens.</p>
+                        </div>
+                    </article>
+                    <article class="etapa"><span class="icone-circulo"><img src="assets/icones/video.svg" alt="" width="32" height="32"></span>
+                        <div class="conteudo">
+                            <p class="eyebrow">Passo 04</p>
+                            <h3>Jogue e transmita</h3>
+                            <p>Role dados, converse por voz e vídeo e, se quiser, inicie uma live para espectadores.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
         <section class="section container">
-            <div class="etapas">
-                <article class="etapa"><span class="numero">01</span>
-                    <div class="conteudo">
-                        <h3>Crie sua conta e escolha seu caminho</h3>
-                        <p>Prepare seu acesso à plataforma e descubra as salas disponíveis para jogar.</p>
-                    </div>
+            <div class="section-title centro">
+                <p class="eyebrow">Para quem é</p>
+                <h2>Uma mesa, três jeitos de participar</h2>
+            </div>
+            <div class="sec2 perfis">
+                <article class="painel">
+                    <h3>Mestres</h3>
+                    <ul class="lista-check">
+                        <li>Criam e controlam a sala</li>
+                        <li>Definem o limite de jogadores</li>
+                        <li>Decidem quando iniciar uma live</li>
+                    </ul>
                 </article>
-                <article class="etapa"><span class="numero">02</span>
-                    <div class="conteudo">
-                        <h3>Crie uma sala ou entre em uma aventura</h3>
-                        <p>Você pode organizar uma campanha própria ou procurar uma mesa aberta para novos jogadores.
-                        </p>
-                    </div>
+                <article class="painel">
+                    <h3>Jogadores</h3>
+                    <ul class="lista-check">
+                        <li>Entram por link ou pela lista</li>
+                        <li>Usam ficha e dados na mesma tela</li>
+                        <li>Conversam por voz, vídeo e chat</li>
+                    </ul>
                 </article>
-                <article class="etapa"><span class="numero">03</span>
-                    <div class="conteudo">
-                        <h3>Monte sua ficha</h3>
-                        <p>Configure seu personagem, seus atributos e as informações necessárias para sua campanha.</p>
-                    </div>
-                </article>
-                <article class="etapa"><span class="numero">04</span>
-                    <div class="conteudo">
-                        <h3>Jogue com seu grupo</h3>
-                        <p>Utilize as ferramentas da plataforma para rolar dados, consultar fichas e conduzir a sessão.
-                        </p>
-                    </div>
+                <article class="painel">
+                    <h3>Espectadores</h3>
+                    <ul class="lista-check">
+                        <li>Assistem a salas com live liberada</li>
+                        <li>Acompanham sem aparecer na mesa</li>
+                        <li>Participam do chat da plateia</li>
+                    </ul>
                 </article>
             </div>
         </section>
-        <section class="section container">
-            <div class="cta"><img class="imgrodape" src="assets/rodape.jpg" alt="Cenário de fantasia">
+
+        <section class="section fundo-800" id="faq">
+            <div class="container faq">
                 <div>
-                    <h2>PRONTO PARA COMEÇAR?</h2>
-                    <p>Chame seu grupo e prepare a próxima aventura.</p><a class="btn-card"
-                        href="recursos.html">CONHECER RECURSOS</a>
+                    <p class="eyebrow">FAQ</p>
+                    <h2>Perguntas frequentes</h2>
+                    <p>Não encontrou o que procurava? <a class="link" href="contato.html">Fale com a gente.</a></p>
+                </div>
+                <div class="faq-lista">
+                    <details class="faq-item" open>
+                        <summary>Preciso instalar algo para jogar?</summary>
+                        <p>Não. A Vinte Faces funciona direto no navegador, sem downloads ou plugins.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Quantos jogadores cabem em uma sala?</summary>
+                        <p>Quem decide é o mestre: ele define o limite de jogadores ao criar a sala. Com a sala cheia, novas
+                            entradas são recusadas.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Qual a diferença entre sala pública e privada?</summary>
+                        <p>Salas públicas aparecem na lista e aceitam qualquer jogador; as privadas só entram por convite.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Posso transmitir minha sessão?</summary>
+                        <p>Sim. O mestre pode iniciar uma live da sala; os espectadores assistem e conversam no chat da
+                            plateia, sem aparecer na mesa.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <section class="section container">
+            <div class="cta">
+                <h2>Pronto para rolar o dado?</h2>
+                <p>Crie sua primeira sala em poucos cliques e chame a mesa para jogar.</p>
+                <div class="botoes">
+                    <a class="m-btn btn-g ouro-500" href="salas.html#criar">CRIAR MINHA SALA</a>
+                    <a class="m-btn btn-g btn-fantasma" href="salas.html">VER SALAS ABERTAS</a>
                 </div>
             </div>
         </section>
@@ -81,7 +171,7 @@
         <div class="footerGrid">
             <div>
                 <a href="index.html"><img class="LogoTipo" src="assets/LogoTipo.png" alt="Vinte Faces"></a>
-                <p>Salas de RPG de mesa online: dados, mapas, fichas e ferramentas para dar vida às suas aventuras.</p>
+                <p>Salas de RPG de mesa online, sem gambiarra: dados, mapas, fichas e chamadas em um só lugar.</p>
             </div>
             <div class="coluna">
                 <span class="ouro-500p">EXPLORAR</span>
@@ -91,13 +181,14 @@
                 <a href="lives.html">Lives</a>
             </div>
             <div class="coluna">
-                <span class="ouro-500p">PROJETO</span>
+                <span class="ouro-500p">EMPRESA</span>
                 <a href="sobre.html">Sobre</a>
                 <a href="contato.html">Contato</a>
             </div>
             <div class="coluna">
-                <span class="ouro-500p">FALE CONOSCO</span>
+                <span class="ouro-500p">FALE COM A GENTE</span>
                 <a href="mailto:contato@vintefaces.com.br">contato@vintefaces.com.br</a>
+                <p>@vintefaces nas redes</p>
                 <p>Projeto Integrador · FATEC Praia Grande</p>
             </div>
         </div>

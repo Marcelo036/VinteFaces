@@ -7,38 +7,143 @@
     <title>Lives | Vinte Faces</title>
     <link rel="shortcut icon" href="assets/Icon.png" type="image/x-icon">
     <link rel="stylesheet" href="Style/style.css">
+    <script src="js/menu.js" defer></script>
 </head>
 
 <body>
     <header>
         <a href="index.html"><img class="LogoTipo" src="assets/LogoTipo.png" alt="Vinte Faces"></a>
-        <nav class="navegacao" aria-label="Navegação principal">
-            <a class="h-btn" href="index.html">Inicio</a>
+        <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menu">
+            <img class="icone-abrir" src="assets/icones/menu.svg" alt="" width="28" height="28">
+            <img class="icone-fechar" src="assets/icones/fechar.svg" alt="" width="28" height="28">
+        </button>
+        <nav class="navegacao" id="menu-principal" aria-label="Navegação principal">
+            <a class="h-btn" href="index.html">Início</a>
             <a class="h-btn" href="salas.html">Salas</a>
             <a class="h-btn" href="como-funciona.html">Como funciona</a>
             <a class="h-btn" href="recursos.html">Recursos</a>
-            <a class="btn-ativo" href="lives.html">Lives</a>
+            <a class="btn-ativo" href="lives.html" aria-current="page">Lives</a>
             <a class="h-btn" href="sobre.html">Sobre</a>
             <a class="h-btn" href="contato.html">Contato</a>
         </nav>
         <div class="acoes-header">
-            <a class="h2-btn grafite-800 pergaminho-100" href="#">ENTRAR</a>
-            <a class="h2-btn ouro-500" href="login.html">CRIAR SALA</a>
+            <a class="h2-btn btn-fantasma" href="login.html">ENTRAR</a>
+            <a class="h2-btn ouro-500" href="salas.html#criar">CRIAR SALA</a>
         </div>
     </header>
 
     <main>
 
-        <section class="page-intro container">
-            <p class="eyebrow">ACOMPANHE A COMUNIDADE</p>
-            <h1>LIVES</h1>
-            <p>Um novo espaço para acompanhar aventuras, transmissões e conteúdos especiais.</p>
+        <section class="page-intro container topo">
+            <div>
+                <nav class="breadcrumb" aria-label="Você está em">
+                    <a href="index.html">Início</a>
+                    <span aria-current="page">Lives</span>
+                </nav>
+                <h1>Lives</h1>
+                <p>Acompanhe sessões de RPG ao vivo, sem aparecer na mesa e sem atrapalhar a narrativa.</p>
+            </div>
+            <a class="m-btn btn-g ouro-500" href="salas.html#criar">INICIAR UMA LIVE</a>
         </section>
-        <section class="em-breve container">
-            <span class="aviso">NOVIDADE EM DESENVOLVIMENTO</span>
-            <h2>AS LIVES ESTÃO CHEGANDO!</h2>
-            <p>Estamos preparando este espaço para trazer novas experiências para a comunidade Vinte Faces. Em breve,
-                você poderá conferir novidades por aqui.</p>
+
+        <section class="container destaque-secao" id="destaque">
+            <article class="live-destaque">
+                <img src="assets/capas/mesa-ao-vivo.jpg" alt="Mesa de RPG ao vivo vista de cima, com dados, cartas e miniaturas">
+                <span class="btn-off badge-ao-vivo">Ao vivo</span>
+                <span class="espectadores"><img src="assets/icones/olho.svg" alt="" width="16" height="16">128 assistindo</span>
+                <span class="play play-g" aria-hidden="true"><img src="assets/icones/play.svg" alt="" width="36" height="36"></span>
+                <div class="live-titulo">
+                    <h2>Cripta do Rei Cinza — Sessão 12</h2>
+                    <p>Mestre: Fernanda · Sistema: 5e · 4 jogadores</p>
+                </div>
+            </article>
+            <p class="nota">Demonstração do protótipo: a transmissão e os números de espectadores são exemplos.</p>
+        </section>
+
+        <section class="salas-d">
+            <div class="container">
+                <div class="section-topo">
+                    <div class="section-title">
+                        <p class="eyebrow">Agora</p>
+                        <h2>Mesas ao vivo</h2>
+                    </div>
+                    <a class="m-btn ouro-500-border" href="salas.html?filtro=ao-vivo">VER TODAS AS LIVES</a>
+                </div>
+                <div class="salas">
+                    <article class="card">
+                        <img loading="lazy" src="assets/capas/capa4.png" alt="Capa da sala O Mercado das Sombras: mapa de um mercado subterrâneo">
+                        <div class="card-conteudo">
+                            <div class="badges"><span class="btn-off">Pública</span><span class="btn-off badge-ao-vivo">Ao vivo</span></div>
+                            <h3>O Mercado das Sombras</h3>
+                            <p>Mestre: Rafael · Sistema: Tormenta20</p>
+                            <div class="card-rodape">
+                                <div class="info"><img src="assets/icones/usuarios.svg" alt="" width="20" height="20"><span>86 assistindo</span></div>
+                                <a class="btn-card" href="#destaque">ASSISTIR</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <img loading="lazy" src="assets/capas/capa5.png" alt="Capa da sala Torre do Mago Louco: planta de uma torre">
+                        <div class="card-conteudo">
+                            <div class="badges"><span class="btn-off">Pública</span><span class="btn-off badge-ao-vivo">Ao vivo</span></div>
+                            <h3>Torre do Mago Louco</h3>
+                            <p>Mestre: Ana · Sistema: 5e</p>
+                            <div class="card-rodape">
+                                <div class="info"><img src="assets/icones/usuarios.svg" alt="" width="20" height="20"><span>41 assistindo</span></div>
+                                <a class="btn-card" href="#destaque">ASSISTIR</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <img loading="lazy" src="assets/capas/capa6.png" alt="Capa da sala Mesa de Domingo: mesa de jogo com dados e cartas">
+                        <div class="card-conteudo">
+                            <div class="badges"><span class="btn-off">Pública</span><span class="btn-off badge-ao-vivo">Ao vivo</span></div>
+                            <h3>Mesa de Domingo</h3>
+                            <p>Mestre: Lucas · Sistema: Ordem Paranormal</p>
+                            <div class="card-rodape">
+                                <div class="info"><img src="assets/icones/usuarios.svg" alt="" width="20" height="20"><span>17 assistindo</span></div>
+                                <a class="btn-card" href="#destaque">ASSISTIR</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section container">
+            <div class="section-title centro">
+                <p class="eyebrow">Para mestres</p>
+                <h2>Transmita sua mesa em três passos</h2>
+                <p>Você decide quando a live começa, quem pode assistir e quando ela termina.</p>
+            </div>
+            <div class="sec2 passos-live">
+                <article class="painel">
+                    <span class="numero-g">01</span>
+                    <h3>Abra a sala</h3>
+                    <p>Crie uma sala pública e marque a opção “Permitir espectadores (live)”.</p>
+                </article>
+                <article class="painel">
+                    <span class="numero-g">02</span>
+                    <h3>Inicie a live</h3>
+                    <p>Quando a mesa estiver pronta, clique em “Iniciar live”. A sala passa a aparecer em Lives.</p>
+                </article>
+                <article class="painel">
+                    <span class="numero-g">03</span>
+                    <h3>Encerre quando quiser</h3>
+                    <p>Finalize a transmissão a qualquer momento; a sessão segue normalmente entre os jogadores.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section container chamada">
+            <div class="cta">
+                <h2>Sua aventura merece plateia</h2>
+                <p>Abra uma sala, libere os espectadores e transmita sua próxima sessão.</p>
+                <div class="botoes">
+                    <a class="m-btn btn-g ouro-500" href="salas.html#criar">INICIAR UMA LIVE</a>
+                    <a class="m-btn btn-g btn-fantasma" href="recursos.html">VER RECURSOS</a>
+                </div>
+            </div>
         </section>
 
     </main>
@@ -47,7 +152,7 @@
         <div class="footerGrid">
             <div>
                 <a href="index.html"><img class="LogoTipo" src="assets/LogoTipo.png" alt="Vinte Faces"></a>
-                <p>Salas de RPG de mesa online: dados, mapas, fichas e ferramentas para dar vida às suas aventuras.</p>
+                <p>Salas de RPG de mesa online, sem gambiarra: dados, mapas, fichas e chamadas em um só lugar.</p>
             </div>
             <div class="coluna">
                 <span class="ouro-500p">EXPLORAR</span>
@@ -57,13 +162,14 @@
                 <a href="lives.html">Lives</a>
             </div>
             <div class="coluna">
-                <span class="ouro-500p">PROJETO</span>
+                <span class="ouro-500p">EMPRESA</span>
                 <a href="sobre.html">Sobre</a>
                 <a href="contato.html">Contato</a>
             </div>
             <div class="coluna">
-                <span class="ouro-500p">FALE CONOSCO</span>
+                <span class="ouro-500p">FALE COM A GENTE</span>
                 <a href="mailto:contato@vintefaces.com.br">contato@vintefaces.com.br</a>
+                <p>@vintefaces nas redes</p>
                 <p>Projeto Integrador · FATEC Praia Grande</p>
             </div>
         </div>

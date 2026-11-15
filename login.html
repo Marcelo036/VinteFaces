@@ -8,6 +8,9 @@
 
     <link rel="shortcut icon" href="assets/Icon.png" type="image/x-icon">
     <link rel="stylesheet" href="Style/style.css">
+    <script src="js/menu.js" defer></script>
+    <script src="js/formulario.js" defer></script>
+    <script src="js/login.js" defer></script>
 </head>
 
 <body>
@@ -16,8 +19,12 @@
         <a href="index.html">
             <img class="LogoTipo" src="assets/LogoTipo.png" alt="Vinte Faces">
         </a>
+        <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menu">
+            <img class="icone-abrir" src="assets/icones/menu.svg" alt="" width="28" height="28">
+            <img class="icone-fechar" src="assets/icones/fechar.svg" alt="" width="28" height="28">
+        </button>
 
-        <nav class="navegacao" aria-label="Navegação principal">
+        <nav class="navegacao" id="menu-principal" aria-label="Navegação principal">
             <a class="h-btn" href="index.html">Início</a>
             <a class="h-btn" href="salas.html">Salas</a>
             <a class="h-btn" href="como-funciona.html">Como funciona</a>
@@ -28,8 +35,8 @@
         </nav>
 
         <div class="acoes-header">
-            <a class="h2-btn grafite-800 pergaminho-100" href="login.html">ENTRAR</a>
-            <a class="h2-btn ouro-500" href="salas.html">CRIAR SALA</a>
+            <a class="h2-btn btn-fantasma" href="login.html">ENTRAR</a>
+            <a class="h2-btn ouro-500" href="salas.html#criar">CRIAR SALA</a>
         </div>
     </header>
 
@@ -38,13 +45,13 @@
         <section class="login-layout">
 
             <div class="login-apresentacao">
-                <p class="eyebrow">BEM-VINDO DE VOLTA, AVENTUREIRO</p>
+                <p class="eyebrow">BEM-VINDO, AVENTUREIRO</p>
 
                 <h1>SUA PRÓXIMA HISTÓRIA ESPERA POR VOCÊ.</h1>
 
                 <p>
-                    Entre na sua conta, reúna seu grupo
-                    e continue de onde sua aventura parou.
+                    Diga seu nome, reúna seu grupo
+                    e comece (ou continue) a sua aventura.
                 </p>
             </div>
 
@@ -55,25 +62,26 @@
                 <h2>ENTRAR</h2>
 
                 <p class="login-subtitulo">
-                    Informe seus dados para acessar sua conta.
+                    Informe seu nome e e-mail para entrar nas salas.
                 </p>
 
-                <form class="login-form"
-                    onsubmit="event.preventDefault(); alert('Este login ainda não está conectado a um sistema de autenticação.');">
+                <form class="login-form" id="form-login" novalidate>
+
+                    <label for="nome">
+                        Nome
+
+                        <input type="text" id="nome" name="nome" placeholder="Como a mesa vai chamar você?"
+                            autocomplete="name" required aria-describedby="erro-nome">
+                    </label>
+                    <p class="mensagem-erro" id="erro-nome" hidden>Informe seu nome.</p>
 
                     <label for="email">
                         E-mail
 
                         <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com"
-                            autocomplete="email" required>
+                            autocomplete="email" required aria-describedby="erro-email">
                     </label>
-
-                    <label for="senha">
-                        Senha
-
-                        <input type="password" id="senha" name="senha" placeholder="Digite sua senha"
-                            autocomplete="current-password" required>
-                    </label>
+                    <p class="mensagem-erro" id="erro-email" hidden>Informe um e-mail válido.</p>
 
                     <div class="login-opcoes">
 
@@ -82,31 +90,20 @@
                             Lembrar de mim
                         </label>
 
-                        <a href="#"
-                            onclick="event.preventDefault(); alert('A recuperação de senha será disponibilizada futuramente.');">
-                            Esqueceu a senha?
-                        </a>
-
                     </div>
 
                     <button class="m-btn ouro-500" type="submit">
-                        ACESSAR CONTA
+                        ENTRAR
                     </button>
 
                 </form>
 
-                <p class="login-cadastro">
-                    Ainda não tem uma conta?
-                    <a href="#"
-                        onclick="event.preventDefault(); alert('O cadastro será disponibilizado futuramente.');">
-                        Cadastre-se
-                    </a>
-                </p>
+                <p class="login-cadastro" id="login-status" role="status"></p>
 
                 <p class="login-aviso">
                     Página demonstrativa do Projeto Integrador.
-                    O formulário ainda não realiza autenticação
-                    nem armazena dados.
+                    Não há senha nem autenticação: seu nome e e-mail
+                    ficam salvos só neste navegador.
                 </p>
 
             </div>
